@@ -17,19 +17,33 @@ function App() {
           <Hero />
         </section>
 
-        <Plastimega />
+        <section id='plastimega'>
+          <Plastimega />
+        </section>
 
-        <Productos />
+        <section id='produtos'>
+          <Productos />
+        </section>
 
-        <TopTen />
+        <section id='topten'>
+          <TopTen />
+        </section>
 
-        <Servicios />
+        <section id='servicios'>
+          <Servicios />
+        </section>
 
-        <Testimonios />
+        <section id='testimonios'>
+          <Testimonios />
+        </section>
 
-        <Blog />
+        <section id='blog'>
+          <Blog />
+        </section>
 
-        <ContactoBanner />
+        <section id='contacto'>
+          <ContactoBanner />
+        </section>
       </main>
 
       <Footer />

@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 const Plastimega = () => {
   return (
@@ -12,21 +13,45 @@ const Plastimega = () => {
           <div className='max-w-7xl mx-auto w-full'>
             <div className='grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center'>
               {/* Lado izquierdo - Contenido de texto */}
-              <div className='space-y-4 md:space-y-6 lg:space-y-8'>
+              <motion.div
+                className='space-y-4 md:space-y-6 lg:space-y-8'
+                initial={{ opacity: 0, x: -100 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+              >
                 {/* Título principal */}
-                <h2 className='text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-800 leading-tight'>
+                <motion.h2
+                  className='text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-800 leading-tight'
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                >
                   Somos tu{" "}
                   <span className='text-blue-900'>
                     mejor aliado en soluciones
                   </span>{" "}
                   de empaque y embalaje de plástico.
-                </h2>
+                </motion.h2>
 
                 {/* Línea divisoria */}
-                <div className='w-full h-px bg-gray-300'></div>
+                <motion.div
+                  className='w-full h-px bg-gray-300'
+                  initial={{ scaleX: 0 }}
+                  whileInView={{ scaleX: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8, delay: 0.4 }}
+                ></motion.div>
 
                 {/* Descripción */}
-                <div className='space-y-2 md:space-y-3 lg:space-y-4 text-gray-700 text-sm md:text-base'>
+                <motion.div
+                  className='space-y-2 md:space-y-3 lg:space-y-4 text-gray-700 text-sm md:text-base'
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.5 }}
+                >
                   <p className='leading-relaxed text-justify'>
                     Plastimega es un distribuidor líder en plásticos,
                     desechables, cajas para el agro y productos de empaque.
@@ -43,12 +68,28 @@ const Plastimega = () => {
                       gran variedad, entregas rápidas y precios competitivos.
                     </span>
                   </p>
-                </div>
+                </motion.div>
 
                 {/* Lista de características con checkmarks */}
-                <div className='space-y-2 md:space-y-3 lg:space-y-4'>
+                <motion.div
+                  className='space-y-2 md:space-y-3 lg:space-y-4'
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{
+                    duration: 0.6,
+                    delay: 0.7,
+                    staggerChildren: 0.1,
+                  }}
+                >
                   {/* Proceso productivo efectivo */}
-                  <div className='flex items-start gap-2 md:gap-3 lg:gap-4'>
+                  <motion.div
+                    className='flex items-start gap-2 md:gap-3 lg:gap-4'
+                    initial={{ opacity: 0, x: -30 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.8 }}
+                  >
                     <div className='shrink-0 w-6 h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 bg-blue-600 rounded-full flex items-center justify-center'>
                       <svg
                         className='w-3 h-3 md:w-4 md:h-4 lg:w-5 lg:h-5 text-white'
@@ -71,10 +112,16 @@ const Plastimega = () => {
                         altos volúmenes.
                       </p>
                     </div>
-                  </div>
+                  </motion.div>
 
                   {/* Costos eficientes */}
-                  <div className='flex items-start gap-2 md:gap-3 lg:gap-4'>
+                  <motion.div
+                    className='flex items-start gap-2 md:gap-3 lg:gap-4'
+                    initial={{ opacity: 0, x: -30 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.9 }}
+                  >
                     <div className='shrink-0 w-6 h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 bg-blue-600 rounded-full flex items-center justify-center'>
                       <svg
                         className='w-3 h-3 md:w-4 md:h-4 lg:w-5 lg:h-5 text-white'
@@ -97,10 +144,16 @@ const Plastimega = () => {
                         otras opciones.
                       </p>
                     </div>
-                  </div>
+                  </motion.div>
 
                   {/* Certificaciones */}
-                  <div className='flex items-start gap-2 md:gap-3 lg:gap-4'>
+                  <motion.div
+                    className='flex items-start gap-2 md:gap-3 lg:gap-4'
+                    initial={{ opacity: 0, x: -30 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 1.0 }}
+                  >
                     <div className='shrink-0 w-6 h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 bg-blue-600 rounded-full flex items-center justify-center'>
                       <svg
                         className='w-3 h-3 md:w-4 md:h-4 lg:w-5 lg:h-5 text-white'
@@ -123,10 +176,16 @@ const Plastimega = () => {
                         compromiso con la calidad
                       </p>
                     </div>
-                  </div>
+                  </motion.div>
 
                   {/* Respaldo */}
-                  <div className='flex items-start gap-2 md:gap-3 lg:gap-4'>
+                  <motion.div
+                    className='flex items-start gap-2 md:gap-3 lg:gap-4'
+                    initial={{ opacity: 0, x: -30 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 1.1 }}
+                  >
                     <div className='shrink-0 w-6 h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 bg-blue-600 rounded-full flex items-center justify-center'>
                       <svg
                         className='w-3 h-3 md:w-4 md:h-4 lg:w-5 lg:h-5 text-white'
@@ -148,22 +207,36 @@ const Plastimega = () => {
                         Pertenecemos a un sólido grupo empresarial.
                       </p>
                     </div>
-                  </div>
-                </div>
+                  </motion.div>
+                </motion.div>
 
                 {/* Botón de contacto */}
-                <div className='pt-2 md:pt-3 lg:pt-4'>
-                  <a
+                <motion.div
+                  className='pt-2 md:pt-3 lg:pt-4'
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 1.2 }}
+                >
+                  <motion.a
                     href='#contacto'
                     className='inline-block bg-blue-900 text-yellow-400 px-6 py-2 md:px-8 md:py-2.5 lg:px-10 lg:py-3 rounded-full font-bold text-sm md:text-base uppercase hover:bg-blue-800 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105'
+                    whileHover={{ scale: 1.1, rotate: [0, -2, 2, -2, 0] }}
+                    whileTap={{ scale: 0.95 }}
                   >
                     Contáctanos
-                  </a>
-                </div>
-              </div>
+                  </motion.a>
+                </motion.div>
+              </motion.div>
 
               {/* Lado derecho - Imagen */}
-              <div className='flex items-center justify-center'>
+              <motion.div
+                className='flex items-center justify-center'
+                initial={{ opacity: 0, x: 100, rotateY: 20 }}
+                whileInView={{ opacity: 1, x: 0, rotateY: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.9, ease: "easeOut" }}
+              >
                 <div
                   className='relative w-full h-full min-h-150 rounded-2xl overflow-hidden'
                   style={{
@@ -182,7 +255,7 @@ const Plastimega = () => {
                     }}
                   />
                 </div>
-              </div>
+              </motion.div>
             </div>
           </div>
         </div>
@@ -192,31 +265,67 @@ const Plastimega = () => {
       <section className='relative h-screen w-full overflow-hidden bg-white'>
         <div className='grid grid-cols-1 lg:grid-cols-2 h-full'>
           {/* Lado izquierdo - Imagen */}
-          <div className='relative h-full w-full overflow-hidden'>
+          <motion.div
+            className='relative h-full w-full overflow-hidden'
+            initial={{ opacity: 0, x: -100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
             <img
               src='/img/imagenes/imagen 3-03.png'
               alt='Persona con fresas en contenedor plástico'
               className='w-full h-full object-cover'
             />
-          </div>
+          </motion.div>
 
           {/* Lado derecho - Contenido */}
-          <div className='relative h-full w-full bg-blue-900 flex items-center justify-center px-8 md:px-12 lg:px-16 py-8'>
+          <motion.div
+            className='relative h-full w-full bg-blue-900 flex items-center justify-center px-8 md:px-12 lg:px-16 py-8'
+            initial={{ opacity: 0, x: 100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+          >
             <div className='space-y-6 md:space-y-8'>
               {/* Título */}
-              <h2 className='text-2xl md:text-3xl lg:text-4xl font-bold text-white leading-tight'>
+              <motion.h2
+                className='text-2xl md:text-3xl lg:text-4xl font-bold text-white leading-tight'
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+              >
                 Te brindamos{" "}
                 <span className='text-yellow-400'>la solución completa</span> en
                 productos de plástico.
-              </h2>
+              </motion.h2>
 
               {/* Línea divisoria */}
-              <div className='w-full h-px bg-blue-700'></div>
+              <motion.div
+                className='w-full h-px bg-blue-700'
+                initial={{ scaleX: 0 }}
+                whileInView={{ scaleX: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: 0.6 }}
+              ></motion.div>
 
               {/* Características con iconos */}
-              <div className='space-y-5 md:space-y-6'>
+              <motion.div
+                className='space-y-5 md:space-y-6'
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.8 }}
+              >
                 {/* Variedad inmensa de productos */}
-                <div className='flex items-start gap-4'>
+                <motion.div
+                  className='flex items-start gap-4'
+                  initial={{ opacity: 0, x: -30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 0.9 }}
+                >
                   <div className='shrink-0'>
                     <img
                       src='/img/iconos/icono 1-03.png'
@@ -232,10 +341,16 @@ const Plastimega = () => {
                       Desde sillas hasta cajas industriales.
                     </p>
                   </div>
-                </div>
+                </motion.div>
 
                 {/* Precios mayoreo y menudeo */}
-                <div className='flex items-start gap-4'>
+                <motion.div
+                  className='flex items-start gap-4'
+                  initial={{ opacity: 0, x: -30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 1.0 }}
+                >
                   <div className='shrink-0'>
                     <img
                       src='/img/iconos/icono 2-03.png'
@@ -251,10 +366,16 @@ const Plastimega = () => {
                       Ajustes según volumen y tipo de cliente.
                     </p>
                   </div>
-                </div>
+                </motion.div>
 
                 {/* Entrega rápida y cobertura nacional */}
-                <div className='flex items-start gap-4'>
+                <motion.div
+                  className='flex items-start gap-4'
+                  initial={{ opacity: 0, x: -30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 1.1 }}
+                >
                   <div className='shrink-0'>
                     <img
                       src='/img/iconos/icono 3-03.png'
@@ -270,10 +391,16 @@ const Plastimega = () => {
                       Logística optimizada.
                     </p>
                   </div>
-                </div>
+                </motion.div>
 
                 {/* Atención personalizada */}
-                <div className='flex items-start gap-4'>
+                <motion.div
+                  className='flex items-start gap-4'
+                  initial={{ opacity: 0, x: -30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 1.2 }}
+                >
                   <div className='shrink-0'>
                     <img
                       src='/img/iconos/icono 4-03.png'
@@ -289,10 +416,16 @@ const Plastimega = () => {
                       Te ayudamos a encontrar exactamente lo que necesitas.
                     </p>
                   </div>
-                </div>
+                </motion.div>
 
                 {/* Amplia Experiencia */}
-                <div className='flex items-start gap-4'>
+                <motion.div
+                  className='flex items-start gap-4'
+                  initial={{ opacity: 0, x: -30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 1.3 }}
+                >
                   <div className='shrink-0'>
                     <img
                       src='/img/iconos/icono 5-03.png'
@@ -308,10 +441,10 @@ const Plastimega = () => {
                       Más de 20 años innovando en la industria.
                     </p>
                   </div>
-                </div>
-              </div>
+                </motion.div>
+              </motion.div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
     </>

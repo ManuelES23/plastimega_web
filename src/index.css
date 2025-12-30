@@ -1,5 +1,16 @@
 @import "tailwindcss";
 
+/* Smooth scroll para toda la página */
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
 /* Custom animations */
 @keyframes blob {
   0% {
@@ -277,5 +288,358 @@ html {
 
   #servicios .pt-4 {
     padding-top: 0.5rem !important;
+  }
+}
+
+/* ========================================
+   RESPONSIVE DESIGN - MOBILE & TABLET
+   ======================================== */
+
+/* Mobile Portrait (320px - 480px) */
+@media (max-width: 480px) {
+  /* Secciones de altura completa ajustadas */
+  section.h-screen {
+    min-height: 100vh;
+    height: auto !important;
+  }
+
+  /* Textos */
+  h1 {
+    font-size: 1.5rem !important;
+    line-height: 1.3 !important;
+  }
+
+  h2 {
+    font-size: 1.25rem !important;
+    line-height: 1.3 !important;
+  }
+
+  h3 {
+    font-size: 1rem !important;
+  }
+
+  p {
+    font-size: 0.875rem !important;
+  }
+
+  /* Botones */
+  button,
+  a.bg-yellow-400,
+  a.bg-blue-900 {
+    font-size: 0.75rem !important;
+    padding: 0.5rem 1rem !important;
+  }
+
+  /* Grids adaptativos */
+  .grid-cols-3 {
+    grid-template-columns: repeat(1, 1fr) !important;
+  }
+
+  .grid-cols-2 {
+    grid-template-columns: repeat(1, 1fr) !important;
+  }
+
+  /* Espaciados reducidos */
+  .gap-8 {
+    gap: 1rem !important;
+  }
+
+  .gap-12 {
+    gap: 1.5rem !important;
+  }
+
+  .space-y-8 > * + * {
+    margin-top: 1rem !important;
+  }
+
+  /* Imágenes responsivas */
+  img {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+
+  /* Padding de secciones */
+  .px-16 {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  .px-24 {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  /* Secciones específicas */
+  #plastimega {
+    padding: 2rem 1rem !important;
+  }
+
+  #plastimega .grid-cols-2 {
+    grid-template-columns: 1fr !important;
+  }
+
+  #productos {
+    padding: 2rem 1rem !important;
+  }
+
+  #top-ten {
+    padding: 2rem 1rem !important;
+  }
+
+  #top-ten .grid-cols-2 {
+    grid-template-columns: 1fr !important;
+  }
+
+  #servicios {
+    padding: 2rem 1rem !important;
+  }
+
+  #testimonios {
+    padding: 2rem 1rem !important;
+  }
+
+  #blog {
+    padding: 2rem 1rem !important;
+  }
+
+  #contacto-banner {
+    padding: 2rem 1rem !important;
+  }
+
+  /* Ocultar elementos decorativos en móvil */
+  .hidden-mobile {
+    display: none !important;
+  }
+
+  /* Footer ajustes */
+  footer .grid-cols-3 {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Animaciones más rápidas en móvil */
+  * {
+    animation-duration: 0.3s !important;
+    transition-duration: 0.2s !important;
+  }
+
+  /* Deshabilitar parallax en móvil */
+  [style*="transform: translateY"] {
+    transform: none !important;
+  }
+}
+
+/* Mobile Landscape (481px - 767px) */
+@media (min-width: 481px) and (max-width: 767px) {
+  section.h-screen {
+    min-height: 100vh;
+    height: auto !important;
+  }
+
+  h1 {
+    font-size: 1.75rem !important;
+  }
+
+  h2 {
+    font-size: 1.5rem !important;
+  }
+
+  h3 {
+    font-size: 1.125rem !important;
+  }
+
+  button,
+  a.bg-yellow-400,
+  a.bg-blue-900 {
+    font-size: 0.875rem !important;
+    padding: 0.625rem 1.25rem !important;
+  }
+
+  .grid-cols-3 {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .grid-cols-2 {
+    grid-template-columns: repeat(1, 1fr) !important;
+  }
+
+  .px-16 {
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+  }
+
+  .px-24 {
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+  }
+
+  /* Secciones específicas */
+  #plastimega,
+  #productos,
+  #top-ten,
+  #servicios,
+  #testimonios,
+  #blog,
+  #contacto-banner {
+    padding: 3rem 1.5rem !important;
+  }
+
+  #top-ten .grid-cols-2 {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Animaciones */
+  * {
+    animation-duration: 0.4s !important;
+    transition-duration: 0.3s !important;
+  }
+}
+
+/* Tablet Portrait (768px - 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  section.h-screen {
+    min-height: 100vh;
+  }
+
+  h1 {
+    font-size: 2rem !important;
+  }
+
+  h2 {
+    font-size: 1.75rem !important;
+  }
+
+  h3 {
+    font-size: 1.25rem !important;
+  }
+
+  /* Grids en tablet */
+  .lg\\:grid-cols-3 {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .lg\\:grid-cols-2 {
+    grid-template-columns: repeat(1, 1fr) !important;
+  }
+
+  /* Espaciado moderado */
+  .px-16 {
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
+  }
+
+  .px-24 {
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
+  }
+
+  /* Secciones específicas */
+  #plastimega,
+  #productos,
+  #top-ten,
+  #servicios,
+  #testimonios,
+  #blog,
+  #contacto-banner {
+    padding: 3rem 2rem !important;
+  }
+
+  #plastimega .grid-cols-2 {
+    grid-template-columns: 1fr !important;
+  }
+
+  #top-ten .grid-cols-2 {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Navbar mobile en tablet pequeño */
+  nav .md\\:block {
+    display: none !important;
+  }
+
+  nav .md\\:hidden {
+    display: block !important;
+  }
+}
+
+/* Tablet Landscape (1025px - 1366px) */
+@media (min-width: 1025px) and (max-width: 1366px) {
+  h1 {
+    font-size: 2.25rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  .px-24 {
+    padding-left: 3rem !important;
+    padding-right: 3rem !important;
+  }
+}
+
+/* Ajustes específicos por sección para móvil */
+@media (max-width: 767px) {
+  /* Plastimega */
+  #plastimega .grid-cols-2 {
+    grid-template-columns: 1fr !important;
+  }
+
+  #plastimega .min-h-150 {
+    min-height: auto !important;
+    padding: 2rem 1rem !important;
+  }
+
+  /* Productos */
+  #productos .grid-cols-3 {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* TopTen */
+  #topten .grid-cols-2 {
+    grid-template-columns: 1fr !important;
+  }
+
+  #topten .px-16 {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  /* Servicios */
+  #servicios .grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Testimonios */
+  #testimonios .px-24 {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  /* Blog */
+  #blog .grid-cols-3 {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* ContactoBanner */
+  #contacto-banner h2 {
+    font-size: 2rem !important;
+  }
+
+  #contacto-banner h3 {
+    font-size: 2.5rem !important;
+  }
+}
+
+/* Optimizaciones de performance para móviles */
+@media (max-width: 767px) {
+  /* Reducir animaciones en dispositivos móviles */
+  * {
+    animation-duration: 0.3s !important;
+    transition-duration: 0.2s !important;
+  }
+
+  /* Desactivar parallax en móvil */
+  [style*="transform: translate"] {
+    transform: none !important;
   }
 }

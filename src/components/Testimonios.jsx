@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Testimonios = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -44,9 +45,13 @@ const Testimonios = () => {
   };
 
   return (
-    <section
+    <motion.section
       id='testimonios'
       className='relative h-screen w-full overflow-hidden bg-gray-100'
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.8 }}
     >
       {/* Contenedor principal */}
       <div className='relative z-10 h-full flex items-center justify-center px-4 md:px-8 lg:px-16 xl:px-24 py-12'>
@@ -149,7 +154,7 @@ const Testimonios = () => {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

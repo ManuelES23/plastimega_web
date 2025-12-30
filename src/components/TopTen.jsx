@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 
 const TopTen = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -40,28 +41,62 @@ const TopTen = () => {
   };
 
   return (
-    <section
+    <motion.section
       id='topten'
       className='relative h-screen w-full overflow-hidden bg-blue-900'
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.8 }}
     >
       <div className='grid grid-cols-1 lg:grid-cols-2 h-full'>
         {/* Lado izquierdo - Contenido */}
-        <div className='relative h-full w-full bg-blue-900 flex items-center justify-center px-8 md:px-12 lg:px-16 py-8'>
+        <motion.div
+          className='relative h-full w-full bg-blue-900 flex items-center justify-center px-8 md:px-12 lg:px-16 py-8'
+          initial={{ x: -100, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, delay: 0.2 }}
+        >
           <div className='space-y-8'>
             {/* Título */}
-            <h2 className='text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight'>
+            <motion.h2
+              className='text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight'
+              initial={{ y: 30, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+            >
               Los <span className='font-extrabold'>productos preferidos</span>
               <br />
               por nuestros clientes
-            </h2>
+            </motion.h2>
 
             {/* Línea divisoria */}
-            <div className='w-full max-w-md h-px bg-blue-700'></div>
+            <motion.div
+              className='w-full max-w-md h-px bg-blue-700'
+              initial={{ scaleX: 0 }}
+              whileInView={{ scaleX: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+            ></motion.div>
 
             {/* Características con checkmarks */}
-            <div className='space-y-6'>
+            <motion.div
+              className='space-y-6'
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.8 }}
+            >
               {/* Siempre disponibles */}
-              <div className='flex items-start gap-4'>
+              <motion.div
+                className='flex items-start gap-4'
+                initial={{ x: -50, opacity: 0 }}
+                whileInView={{ x: 0, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.9 }}
+              >
                 <div className='shrink-0 mt-1'>
                   <svg
                     className='w-6 h-6 text-yellow-400'
@@ -84,10 +119,16 @@ const TopTen = () => {
                     productos top ten.
                   </p>
                 </div>
-              </div>
+              </motion.div>
 
               {/* Entrega rápida */}
-              <div className='flex items-start gap-4'>
+              <motion.div
+                className='flex items-start gap-4'
+                initial={{ x: -50, opacity: 0 }}
+                whileInView={{ x: 0, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 1.0 }}
+              >
                 <div className='shrink-0 mt-1'>
                   <svg
                     className='w-6 h-6 text-yellow-400'
@@ -110,10 +151,16 @@ const TopTen = () => {
                     sea, cuando sea.
                   </p>
                 </div>
-              </div>
+              </motion.div>
 
               {/* Programas comerciales */}
-              <div className='flex items-start gap-4'>
+              <motion.div
+                className='flex items-start gap-4'
+                initial={{ x: -50, opacity: 0 }}
+                whileInView={{ x: 0, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 1.1 }}
+              >
                 <div className='shrink-0 mt-1'>
                   <svg
                     className='w-6 h-6 text-yellow-400'
@@ -136,24 +183,47 @@ const TopTen = () => {
                     especiales en abse a volúmen.
                   </p>
                 </div>
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
 
             {/* Botón */}
-            <div className='pt-4'>
-              <button className='bg-yellow-400 text-blue-900 px-10 py-3 rounded-full font-bold text-base uppercase hover:bg-yellow-500 transition-all duration-300 shadow-lg'>
+            <motion.div
+              className='pt-4'
+              initial={{ scale: 0.8, opacity: 0 }}
+              whileInView={{ scale: 1, opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 1.2 }}
+            >
+              <motion.button
+                className='bg-yellow-400 text-blue-900 px-10 py-3 rounded-full font-bold text-base uppercase hover:bg-yellow-500 transition-all duration-300 shadow-lg'
+                whileHover={{ scale: 1.1, rotate: [0, -3, 3, 0] }}
+                whileTap={{ scale: 0.95 }}
+              >
                 ver más
-              </button>
-            </div>
+              </motion.button>
+            </motion.div>
           </div>
-        </div>
+        </motion.div>
 
         {/* Lado derecho - Carrusel */}
-        <div className='relative h-full w-full bg-blue-800 flex items-center justify-center overflow-hidden'>
+        <motion.div
+          className='relative h-full w-full bg-blue-800 flex items-center justify-center overflow-hidden'
+          initial={{ x: 100, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, delay: 0.3 }}
+        >
           {/* Contenedor del carrusel */}
           <div className='relative w-full h-full flex items-center justify-center px-16'>
             {/* Producto actual */}
-            <div className='relative z-10 flex flex-col items-center justify-center'>
+            <motion.div
+              key={currentSlide}
+              className='relative z-10 flex flex-col items-center justify-center'
+              initial={{ opacity: 0, scale: 0.8, rotateY: 90 }}
+              animate={{ opacity: 1, scale: 1, rotateY: 0 }}
+              exit={{ opacity: 0, scale: 0.8, rotateY: -90 }}
+              transition={{ duration: 0.6 }}
+            >
               {/* Imagen del producto */}
               <div className='relative mb-8'>
                 <img
@@ -172,13 +242,15 @@ const TopTen = () => {
                   {productos[currentSlide].colores}
                 </p>
               </div>
-            </div>
+            </motion.div>
 
             {/* Flecha izquierda */}
-            <button
+            <motion.button
               onClick={prevSlide}
               className='absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-yellow-400 hover:bg-yellow-500 text-blue-900 p-3 rounded-full transition-all duration-300 shadow-lg'
               aria-label='Anterior'
+              whileHover={{ scale: 1.2, x: -5 }}
+              whileTap={{ scale: 0.9 }}
             >
               <svg
                 className='w-8 h-8'
@@ -193,13 +265,15 @@ const TopTen = () => {
                   d='M15 19l-7-7 7-7'
                 />
               </svg>
-            </button>
+            </motion.button>
 
             {/* Flecha derecha */}
-            <button
+            <motion.button
               onClick={nextSlide}
               className='absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-yellow-400 hover:bg-yellow-500 text-blue-900 p-3 rounded-full transition-all duration-300 shadow-lg'
               aria-label='Siguiente'
+              whileHover={{ scale: 1.2, x: 5 }}
+              whileTap={{ scale: 0.9 }}
             >
               <svg
                 className='w-8 h-8'
@@ -214,12 +288,12 @@ const TopTen = () => {
                   d='M9 5l7 7-7 7'
                 />
               </svg>
-            </button>
+            </motion.button>
 
             {/* Indicadores (dots) */}
             <div className='absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-3 z-20'>
               {productos.map((_, index) => (
-                <button
+                <motion.button
                   key={index}
                   onClick={() => goToSlide(index)}
                   className={`w-3 h-3 rounded-full transition-all duration-300 ${
@@ -228,13 +302,15 @@ const TopTen = () => {
                       : "bg-blue-400 hover:bg-blue-300"
                   }`}
                   aria-label={`Ir a slide ${index + 1}`}
+                  whileHover={{ scale: 1.3 }}
+                  whileTap={{ scale: 0.9 }}
                 />
               ))}
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

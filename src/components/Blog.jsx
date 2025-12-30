@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 const Blog = () => {
   const articulos = [
@@ -26,9 +27,13 @@ const Blog = () => {
   ];
 
   return (
-    <section
+    <motion.section
       id='blog'
       className='relative h-screen w-full overflow-hidden bg-gray-100'
+      initial={{ opacity: 0, scale: 0.95 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.8 }}
     >
       {/* Contenedor principal */}
       <div className='relative z-10 h-full flex items-center justify-center px-4 md:px-8 lg:px-16 xl:px-24 py-12'>
@@ -79,7 +84,7 @@ const Blog = () => {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 
