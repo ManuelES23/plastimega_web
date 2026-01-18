@@ -59,7 +59,7 @@ const SEO = ({
     if (schemaData) {
       // Eliminar schema anterior si existe
       const existingSchema = document.querySelector(
-        'script[data-schema="dynamic"]'
+        'script[data-schema="dynamic"]',
       );
       if (existingSchema) {
         existingSchema.remove();
