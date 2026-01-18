@@ -1,0 +1,23 @@
+# Robots.txt para Plastimega
+# https://plastimega.com
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://plastimega.com/sitemap.xml
+
+# Bloquear archivos innecesarios
+Disallow: /src/
+Disallow: /*.json$
+Disallow: /node_modules/
+
+# Permitir rastreadores específicos
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Crawl-delay para ser amigable con el servidor
+Crawl-delay: 1

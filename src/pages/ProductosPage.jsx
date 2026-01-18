@@ -4,9 +4,51 @@ import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import OptimizedImage from "../components/OptimizedImage";
+import SEO from "../components/SEO";
 
 const ProductosPage = () => {
   const [categoriaActiva, setCategoriaActiva] = useState("todas");
+
+  const productosSchema = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: "Catálogo de Productos Plásticos - Plastimega",
+    description:
+      "Explora nuestro catálogo completo de productos plásticos: cajas, sillas, tapas, embalaje y desechables.",
+    url: "https://plastimega.com/productos",
+    mainEntity: {
+      "@type": "ItemList",
+      name: "Productos Plásticos",
+      description: "Catálogo de productos plásticos de alta calidad",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Cajas de plástico",
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Sillas de plástico",
+        },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: "Tapas de plástico",
+        },
+        {
+          "@type": "ListItem",
+          position: 4,
+          name: "Embalaje y empaque",
+        },
+        {
+          "@type": "ListItem",
+          position: 5,
+          name: "Desechables",
+        },
+      ],
+    },
+  };
 
   const categorias = [
     { id: "todas", nombre: "Todas las categorías" },
@@ -174,6 +216,13 @@ const ProductosPage = () => {
 
   return (
     <div className='min-h-screen bg-gray-100'>
+      <SEO
+        title='Catálogo de Productos Plásticos | Plastimega México'
+        description='Explora nuestro catálogo completo de productos plásticos: cajas industriales, sillas apilables, tapas, embalaje y desechables. Calidad garantizada en México.'
+        keywords='catálogo productos plásticos, cajas plástico industrial, sillas plástico apilables, tapas plásticas, embalaje plástico, desechables México, Plastimega productos'
+        canonicalUrl='https://plastimega.com/productos'
+        schemaData={productosSchema}
+      />
       {/* Hero Section con Navbar integrado */}
       <motion.section
         className='relative pt-0 pb-16 px-4 md:px-8 lg:px-16 bg-gradient-to-br from-blue-900 to-blue-800'

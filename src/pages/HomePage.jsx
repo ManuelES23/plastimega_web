@@ -8,10 +8,32 @@ import Testimonios from "../components/Testimonios";
 import Blog from "../components/Blog";
 import ContactoBanner from "../components/ContactoBanner";
 import Footer from "../components/Footer";
+import SEO from "../components/SEO";
 
 const HomePage = () => {
+  const homeSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: "Plastimega - Inicio",
+    description:
+      "Distribuidor líder de productos plásticos en México. Cajas, sillas, tapas, embalaje y desechables de alta calidad.",
+    url: "https://plastimega.com/",
+    mainEntity: {
+      "@type": "Organization",
+      name: "Plastimega",
+      description: "Distribuidor de productos plásticos industriales",
+    },
+  };
+
   return (
     <div className='min-h-screen'>
+      <SEO
+        title='Plastimega | Distribuidor de Productos Plásticos en México'
+        description='Plastimega es líder en distribución de productos plásticos: cajas, sillas, tapas, embalaje y desechables. Soluciones industriales de alta calidad para tu negocio en México.'
+        keywords='productos plásticos, cajas de plástico, sillas de plástico, tapas plásticas, embalaje, desechables, distribuidor plásticos México, Plastimega'
+        canonicalUrl='https://plastimega.com/'
+        schemaData={homeSchema}
+      />
       <main>
         <section id='home'>
           <Hero />
