@@ -7,28 +7,28 @@ const Testimonios = () => {
   const testimonios = [
     {
       id: 1,
-      logo: "/img/logos/logo-cliente-1.png",
+      logo: "/img/imagenes/tortuga-05.png",
       testimonio:
         "Plastimega nos ha proporcionado soluciones de embalaje de alta calidad que han mejorado significativamente nuestra eficiencia operativa. Su servicio al cliente es excepcional.",
-      avatar: "/img/avatars/avatar-1.jpg",
+      avatar: "/img/imagenes/imagen 5png-05.png",
       nombre: "Juan Pérez",
       cargo: "Gerente de Operaciones",
     },
     {
       id: 2,
-      logo: "/img/logos/logo-cliente-2.png",
+      logo: "/img/imagenes/pagerduty-05.png",
       testimonio:
         "La variedad de productos y la rapidez en las entregas hacen de Plastimega nuestro proveedor preferido. Siempre cumplen con nuestras expectativas.",
-      avatar: "/img/avatars/avatar-2.jpg",
+      avatar: "/img/imagenes/imagen 6png-05.png",
       nombre: "María González",
       cargo: "Directora de Logística",
     },
     {
       id: 3,
-      logo: "/img/logos/logo-cliente-3.png",
+      logo: "/img/imagenes/nitro-05.png",
       testimonio:
         "Excelente calidad en todos sus productos. Hemos trabajado con ellos durante años y siempre mantienen los más altos estándares de calidad.",
-      avatar: "/img/avatars/avatar-3.jpg",
+      avatar: "/img/imagenes/imagen 4-05.png",
       nombre: "Carlos Ramírez",
       cargo: "Gerente de Compras",
     },
@@ -40,7 +40,7 @@ const Testimonios = () => {
 
   const prevSlide = () => {
     setCurrentSlide(
-      (prev) => (prev - 1 + testimonios.length) % testimonios.length
+      (prev) => (prev - 1 + testimonios.length) % testimonios.length,
     );
   };
 
@@ -74,14 +74,14 @@ const Testimonios = () => {
               {testimonios.map((testimonio, index) => (
                 <div
                   key={testimonio.id}
-                  className='bg-white rounded-lg shadow-lg p-8 flex flex-col items-center text-center min-h-[400px]'
+                  className='bg-white rounded-lg shadow-lg p-8 flex flex-col items-center text-center min-h-100'
                 >
                   {/* Logo de la empresa */}
                   <div className='mb-6 h-16 flex items-center justify-center'>
                     <img
                       src={testimonio.logo}
                       alt='Logo empresa'
-                      className='max-h-12 max-w-full object-contain'
+                      className='max-h-25 max-w-full object-contain'
                     />
                   </div>
 

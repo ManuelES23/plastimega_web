@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const TopTen = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -194,13 +195,15 @@ const TopTen = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 1.2 }}
             >
-              <motion.button
-                className='bg-yellow-400 text-blue-900 px-10 py-3 rounded-full font-bold text-base uppercase hover:bg-yellow-500 transition-all duration-300 shadow-lg'
-                whileHover={{ scale: 1.1, rotate: [0, -3, 3, 0] }}
-                whileTap={{ scale: 0.95 }}
-              >
-                ver más
-              </motion.button>
+              <Link to='/productos'>
+                <motion.button
+                  className='bg-yellow-400 text-blue-900 px-10 py-3 rounded-full font-bold text-base uppercase hover:bg-yellow-500 transition-all duration-300 shadow-lg'
+                  whileHover={{ scale: 1.1, rotate: [0, -3, 3, 0] }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  ver más
+                </motion.button>
+              </Link>
             </motion.div>
           </div>
         </motion.div>

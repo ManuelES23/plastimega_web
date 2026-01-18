@@ -8,21 +8,21 @@ const Blog = () => {
       titulo: "SOLUCIONES PARA SUMINISTRO AGRO.",
       descripcion:
         "La industria agroalimentaria es una de las más dinámicas, por ello, te brindamos un servicio integral para que tu operación no se detenga.",
-      imagen: "/img/blog/blog-1.jpg",
+      imagen: "/img/imagenes/imagen 1-05.png",
     },
     {
       id: 2,
       titulo: "PLASTIMEGA LANZA NUEVA PÁGINA WEB.",
       descripcion:
         "La industria agroalimentaria es una de las más dinámicas, por ello, te brindamos un servicio integral para que tu operación no se detenga.",
-      imagen: "/img/blog/blog-2.jpg",
+      imagen: "/img/imagenes/imagen 2-05.png",
     },
     {
       id: 3,
       titulo: "NUEVOS PRODUCTOS POR ANUNCIARSE.",
       descripcion:
         "La industria agroalimentaria es una de las más dinámicas, por ello, te brindamos un servicio integral para que tu operación no se detenga.",
-      imagen: "/img/blog/blog-3.jpg",
+      imagen: "/img/imagenes/imagen 3-05.png",
     },
   ];
 
@@ -56,19 +56,18 @@ const Blog = () => {
             {articulos.map((articulo) => (
               <div
                 key={articulo.id}
-                className='bg-white rounded-t-3xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300'
+                className='rounded-t-3xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300'
               >
-                {/* Imagen */}
-                <div className='relative h-56 overflow-hidden rounded-t-3xl'>
-                  <img
-                    src={articulo.imagen}
-                    alt={articulo.titulo}
-                    className='w-full h-full object-cover'
-                  />
-                </div>
+                {/* Imagen portada */}
+                <img
+                  src={articulo.imagen}
+                  alt={articulo.titulo}
+                  className='w-full h-65 object-cover'
+                  style={{ objectPosition: 'center 80%' }}
+                />
 
                 {/* Contenido azul */}
-                <div className='bg-blue-900 p-8 min-h-[300px] flex flex-col'>
+                <div className='bg-blue-900 p-8 min-h-55'>
                   {/* Título */}
                   <h3 className='text-yellow-400 text-xl font-bold mb-6 uppercase'>
                     {articulo.titulo}

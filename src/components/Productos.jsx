@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const Productos = () => {
   return (
@@ -62,9 +63,15 @@ const Productos = () => {
               <p className='text-gray-600 text-center mb-8 text-sm'>
                 Diseñadas para la operación más exigente.
               </p>
-              <button className='bg-yellow-400 text-gray-800 px-8 py-2 rounded-full font-bold text-sm uppercase hover:bg-yellow-500 transition-all duration-300 shadow-md'>
-                ver más
-              </button>
+              <Link to='/productos'>
+                <motion.button
+                  className='bg-yellow-400 text-gray-800 px-8 py-2 rounded-full font-bold text-sm uppercase hover:bg-yellow-500 transition-all duration-300 shadow-md'
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  ver más
+                </motion.button>
+              </Link>
             </motion.div>
 
             {/* Tarjeta 2: Sillas de plástico */}
@@ -102,9 +109,15 @@ const Productos = () => {
                 <p className='text-gray-600 group-hover:text-white text-center mb-8 text-sm transition-colors duration-300'>
                   Sillas de plástico resistentes, y duraderas.
                 </p>
-                <button className='bg-yellow-400 text-gray-800 px-8 py-2 rounded-full font-bold text-sm uppercase hover:bg-yellow-500 transition-all duration-300 shadow-md'>
-                  ver más
-                </button>
+                <Link to='/productos'>
+                  <motion.button
+                    className='bg-yellow-400 text-gray-800 px-8 py-2 rounded-full font-bold text-sm uppercase hover:bg-yellow-500 transition-all duration-300 shadow-md'
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    ver más
+                  </motion.button>
+                </Link>
               </div>
             </motion.div>
 
@@ -130,9 +143,15 @@ const Productos = () => {
               <p className='text-gray-600 text-center mb-8 text-sm'>
                 Un buen producto merece estar bien protegido.
               </p>
-              <button className='bg-yellow-400 text-gray-800 px-8 py-2 rounded-full font-bold text-sm uppercase hover:bg-yellow-500 transition-all duration-300 shadow-md'>
-                ver más
-              </button>
+              <Link to='/productos'>
+                <motion.button
+                  className='bg-yellow-400 text-gray-800 px-8 py-2 rounded-full font-bold text-sm uppercase hover:bg-yellow-500 transition-all duration-300 shadow-md'
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  ver más
+                </motion.button>
+              </Link>
             </motion.div>
           </div>
         </div>
