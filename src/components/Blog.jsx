@@ -63,7 +63,7 @@ const Blog = () => {
                   src={articulo.imagen}
                   alt={articulo.titulo}
                   className='w-full h-65 object-cover'
-                  style={{ objectPosition: 'center 80%' }}
+                  style={{ objectPosition: "center 80%" }}
                 />
 
                 {/* Contenido azul */}
