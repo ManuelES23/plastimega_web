@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
@@ -8,6 +8,7 @@ import SEO from "../components/SEO";
 
 const ProductosPage = () => {
   const [categoriaActiva, setCategoriaActiva] = useState("todas");
+  const [productoSeleccionado, setProductoSeleccionado] = useState(null);
 
   const productosSchema = {
     "@context": "https://schema.org",
@@ -66,16 +67,26 @@ const ProductosPage = () => {
       nombre: "Silla Milán",
       categoria: "sillas",
       imagen: "/img/productos/SILLA MILAN-05.png",
-      descripcion: "Silla apilable de alta resistencia",
+      descripcion: "Silla apilable de alta resistencia para uso en hogar",
       colores: ["Blanco", "Negro", "Gris", "Azul"],
+      dimensiones: "54 × 42 × 80 cm",
+      peso: "2.49 kg",
+      capacidad: "120 kg",
+      material: "Polipropileno Reciclado",
+      uso: "Hogar",
     },
     {
       id: 2,
-      nombre: "Silla París Naranja",
+      nombre: "Silla París",
       categoria: "sillas",
       imagen: "/img/productos/SILLA PARIS NARANJA_ (1).png",
-      descripcion: "Diseño moderno y confortable",
+      descripcion: "Diseño moderno y confortable para uso en hogar",
       colores: ["Naranja", "Blanco", "Negro", "Rojo"],
+      dimensiones: "56 × 57 × 76 cm",
+      peso: "2.54 kg",
+      capacidad: "120 kg",
+      material: "Polipropileno Reciclado",
+      uso: "Hogar",
     },
 
     // Cajas de plástico
@@ -84,45 +95,102 @@ const ProductosPage = () => {
       nombre: "Caja Cuapiaxtla",
       categoria: "cajas",
       imagen: "/img/productos/CUAPIAXTLA 20KG-04 (1).png",
-      descripcion: "Caja resistente para agricultura y transporte",
-      capacidad: "20kg",
-      colores: ["Verde", "Gris", "Negro"],
+      descripcion: "Empaque para transportar verduras y vegetales",
+      colores: [
+        "Amarillo",
+        "Rojo",
+        "Gris",
+        "Verde",
+        "Naranja",
+        "Azul",
+        "Negro",
+      ],
+      dimensiones: "50 × 34 × 28 cm",
+      peso: "1.648 kg",
+      capacidad: "20 kg",
+      material: "Polietileno de Alta Densidad Reciclado",
+      codigo: "PT020",
+      clasificacion: "Caja desechable",
+      linea: "Línea agrícola",
+      resistencia: "Impacto y peso",
+      condiciones: "Humedad y refrigeración",
     },
     {
       id: 4,
       nombre: "Caja Huixcolotla",
       categoria: "cajas",
       imagen: "/img/productos/HUIXCOLOTLA 25KG-04.png",
-      descripcion: "Alta capacidad para productos agrícolas",
-      capacidad: "25kg",
-      colores: ["Amarillo", "Verde", "Azul"],
+      descripcion: "Empaque para transportar frutas, verduras y vegetales",
+      colores: [
+        "Amarillo",
+        "Rojo",
+        "Gris",
+        "Verde",
+        "Naranja",
+        "Azul",
+        "Negro",
+      ],
+      dimensiones: "50 × 35 × 29.5 cm",
+      peso: "1.460 kg",
+      capacidad: "25 kg",
+      material: "Polietileno de Alta Densidad Reciclado",
+      codigo: "PT025",
+      clasificacion: "Caja desechable",
+      linea: "Línea agrícola",
+      resistencia: "Impacto y peso",
+      condiciones: "Humedad y refrigeración",
     },
     {
       id: 5,
       nombre: "Caja Los Reyes",
       categoria: "cajas",
       imagen: "/img/productos/LOS REYES 23KG-04.png",
-      descripcion: "Diseño optimizado para transporte",
-      capacidad: "23kg",
-      colores: ["Rojo", "Azul", "Negro"],
+      descripcion: "Empaque para transportar verduras y vegetales",
+      colores: ["Rojo", "Azul", "Negro", "Verde", "Gris"],
+      dimensiones: "50.5 × 34 × 30 cm",
+      peso: "0.866 kg",
+      capacidad: "23 kg",
+      material: "Polipropileno Reciclado",
+      codigo: "PT003",
+      clasificacion: "Caja desechable",
+      linea: "Línea agrícola",
+      resistencia: "Impacto y peso",
+      condiciones: "Humedad y refrigeración",
     },
     {
       id: 6,
-      nombre: "Caja Miguel Negrete",
+      nombre: "Caja Miguel Negrete 5",
       categoria: "cajas",
       imagen: "/img/productos/MIGUEL NEGRETE 6 comprimida-05.png",
-      descripcion: "Versatilidad y resistencia en una sola caja",
-      capacidad: "Variable",
+      descripcion: "Empaque para verduras y vegetales",
       colores: ["Gris", "Negro", "Verde"],
+      dimensiones: "50 × 30 × 16 cm",
+      peso: "0.435 kg",
+      capacidad: "10 kg",
+      material: "Polipropileno Reciclado",
+      codigo: "CR10NG5",
+      clasificacion: "Caja desechable",
+      linea: "Línea agrícola",
+      resistencia: "Impacto y peso",
+      condiciones: "Humedad y refrigeración",
     },
     {
       id: 7,
-      nombre: "Caja Plastimega 30kg",
+      nombre: "Caja Plastimega",
       categoria: "cajas",
       imagen: "/img/productos/plastimega 30kg-04.png",
-      descripcion: "Máxima capacidad para cargas pesadas",
-      capacidad: "30kg",
+      descripcion:
+        "Empaque para frutas, verduras y vegetales de alta capacidad",
       colores: ["Negro", "Azul", "Gris"],
+      dimensiones: "55 × 37.5 × 32.4 cm",
+      peso: "2.000 kg",
+      capacidad: "30 kg",
+      material: "Polietileno de Alta Densidad Reciclado",
+      codigo: "CRCMV30",
+      clasificacion: "Caja desechable",
+      linea: "Línea agrícola",
+      resistencia: "Impacto y peso",
+      condiciones: "Humedad y refrigeración",
     },
     {
       id: 8,
@@ -130,8 +198,10 @@ const ProductosPage = () => {
       categoria: "cajas",
       imagen: "/img/productos/PUEBLA2-04.png",
       descripcion: "Ideal para frutas y verduras",
-      capacidad: "20kg",
+      capacidad: "20 kg",
       colores: ["Verde", "Amarillo", "Rojo"],
+      material: "Polipropileno Reciclado",
+      linea: "Línea agrícola",
     },
     {
       id: 9,
@@ -139,8 +209,10 @@ const ProductosPage = () => {
       categoria: "cajas",
       imagen: "/img/productos/PUEBLA3-04.png",
       descripcion: "Diseño compacto y apilable",
-      capacidad: "15kg",
+      capacidad: "15 kg",
       colores: ["Azul", "Negro", "Gris"],
+      material: "Polipropileno Reciclado",
+      linea: "Línea agrícola",
     },
     {
       id: 10,
@@ -148,8 +220,10 @@ const ProductosPage = () => {
       categoria: "cajas",
       imagen: "/img/productos/PUEBLA5-04.png",
       descripcion: "Resistente para uso rudo",
-      capacidad: "18kg",
+      capacidad: "18 kg",
       colores: ["Verde", "Negro", "Azul"],
+      material: "Polipropileno Reciclado",
+      linea: "Línea agrícola",
     },
     {
       id: 11,
@@ -157,8 +231,10 @@ const ProductosPage = () => {
       categoria: "cajas",
       imagen: "/img/productos/PUEBLA6-04.png",
       descripcion: "Perfecta para almacenamiento",
-      capacidad: "22kg",
+      capacidad: "22 kg",
       colores: ["Gris", "Verde", "Negro"],
+      material: "Polipropileno Reciclado",
+      linea: "Línea agrícola",
     },
     {
       id: 12,
@@ -166,8 +242,10 @@ const ProductosPage = () => {
       categoria: "cajas",
       imagen: "/img/productos/TEPEACA 2 25KG-04.png",
       descripcion: "Gran capacidad para productos agrícolas",
-      capacidad: "25kg",
+      capacidad: "25 kg",
       colores: ["Azul", "Verde", "Amarillo"],
+      material: "Polietileno de Alta Densidad Reciclado",
+      linea: "Línea agrícola",
     },
     {
       id: 13,
@@ -175,8 +253,10 @@ const ProductosPage = () => {
       categoria: "cajas",
       imagen: "/img/productos/VILLA NUEVA-05.png",
       descripcion: "Diseño ergonómico para fácil manejo",
-      capacidad: "20kg",
+      capacidad: "20 kg",
       colores: ["Negro", "Gris", "Verde"],
+      material: "Polipropileno Reciclado",
+      linea: "Línea agrícola",
     },
 
     // Tapas de plástico
@@ -185,7 +265,9 @@ const ProductosPage = () => {
       nombre: "Tapa 10kg y 16kg",
       categoria: "tapas",
       imagen: "/img/productos/TAPA 10KG Y 16KG-05.png",
-      descripcion: "Tapa hermética para cajas pequeñas",
+      descripcion: "Complemento para Caja Miguel Negrete 5 y Villanueva",
+      peso: "0.041 kg",
+      material: "Polipropileno Reciclado",
       compatibilidad: "Cajas 10kg - 16kg",
       colores: ["Transparente", "Negro"],
     },
@@ -194,7 +276,10 @@ const ProductosPage = () => {
       nombre: "Tapa 20kg",
       categoria: "tapas",
       imagen: "/img/productos/TAPA 20KG-05.png",
-      descripcion: "Protección óptima para cajas medianas",
+      descripcion: "Complemento para Caja Puebla 5",
+      peso: "0.040 kg",
+      material: "Polipropileno Reciclado",
+      codigo: "TENE20",
       compatibilidad: "Cajas 20kg",
       colores: ["Transparente", "Negro", "Azul"],
     },
@@ -203,7 +288,10 @@ const ProductosPage = () => {
       nombre: "Tapa 23kg",
       categoria: "tapas",
       imagen: "/img/productos/TAPA 23KG-05.png",
-      descripcion: "Tapa reforzada para máxima protección",
+      descripcion: "Complemento para Caja Los Reyes",
+      peso: "0.045 kg",
+      material: "Polipropileno Reciclado",
+      codigo: "TENE23",
       compatibilidad: "Cajas 23kg - 25kg",
       colores: ["Negro", "Transparente"],
     },
@@ -305,52 +393,47 @@ const ProductosPage = () => {
             {productosFiltrados.map((producto, index) => (
               <motion.div
                 key={producto.id}
-                className='bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300'
+                className='bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300 flex flex-col cursor-pointer'
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.4, delay: index * 0.1 }}
+                transition={{ duration: 0.4, delay: index * 0.05 }}
                 whileHover={{ y: -10 }}
                 layout
+                onClick={() => setProductoSeleccionado(producto)}
               >
-                <div className='relative h-64 bg-white flex items-center justify-center'>
+                <div className='relative h-72 bg-white flex items-center justify-center p-2'>
                   <OptimizedImage
                     src={producto.imagen}
                     alt={producto.nombre}
-                    className='w-full h-full object-contain p-4'
+                    className='w-full h-full object-contain'
                   />
                 </div>
 
-                <div className='p-6'>
-                  <h3 className='text-xl font-bold text-gray-800 mb-2'>
+                <div className='p-5 flex-grow flex flex-col'>
+                  <h3 className='text-lg font-bold text-gray-800 mb-2'>
                     {producto.nombre}
                   </h3>
-                  <p className='text-gray-600 text-sm mb-4'>
+
+                  <p className='text-gray-600 text-sm mb-3 line-clamp-2'>
                     {producto.descripcion}
                   </p>
 
                   {producto.capacidad && (
-                    <div className='mb-3'>
-                      <span className='inline-block bg-blue-100 text-blue-900 px-3 py-1 rounded-full text-xs font-semibold'>
-                        Capacidad: {producto.capacidad}
-                      </span>
-                    </div>
+                    <span className='inline-block bg-blue-100 text-blue-900 px-3 py-1 rounded-full text-xs font-semibold w-fit mb-3'>
+                      Capacidad: {producto.capacidad}
+                    </span>
                   )}
 
                   {producto.compatibilidad && (
-                    <div className='mb-3'>
-                      <span className='inline-block bg-green-100 text-green-900 px-3 py-1 rounded-full text-xs font-semibold'>
-                        Compatible: {producto.compatibilidad}
-                      </span>
-                    </div>
+                    <span className='inline-block bg-green-100 text-green-900 px-3 py-1 rounded-full text-xs font-semibold w-fit mb-3'>
+                      {producto.compatibilidad}
+                    </span>
                   )}
 
                   {producto.colores && (
                     <div className='mb-4'>
-                      <p className='text-xs text-gray-500 mb-2'>
-                        Colores disponibles:
-                      </p>
                       <div className='flex flex-wrap gap-1'>
-                        {producto.colores.map((color, idx) => (
+                        {producto.colores.slice(0, 4).map((color, idx) => (
                           <span
                             key={idx}
                             className='text-xs bg-gray-100 px-2 py-1 rounded'
@@ -358,12 +441,17 @@ const ProductosPage = () => {
                             {color}
                           </span>
                         ))}
+                        {producto.colores.length > 4 && (
+                          <span className='text-xs bg-gray-200 px-2 py-1 rounded font-medium'>
+                            +{producto.colores.length - 4}
+                          </span>
+                        )}
                       </div>
                     </div>
                   )}
 
-                  <button className='w-full bg-yellow-400 text-gray-800 py-2 rounded-lg font-bold text-sm uppercase hover:bg-yellow-500 transition-all duration-300 shadow-md'>
-                    Solicitar cotización
+                  <button className='w-full bg-yellow-400 text-gray-800 py-2 rounded-lg font-bold text-sm uppercase hover:bg-yellow-500 transition-all duration-300 shadow-md mt-auto'>
+                    Ver detalles
                   </button>
                 </div>
               </motion.div>
@@ -383,6 +471,200 @@ const ProductosPage = () => {
           )}
         </div>
       </section>
+
+      {/* Modal de detalle del producto */}
+      <AnimatePresence>
+        {productoSeleccionado && (
+          <motion.div
+            className='fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60'
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setProductoSeleccionado(null)}
+          >
+            <motion.div
+              className='bg-white rounded-2xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto'
+              initial={{ scale: 0.8, opacity: 0, y: 50 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              exit={{ scale: 0.8, opacity: 0, y: 50 }}
+              transition={{ type: "spring", stiffness: 300, damping: 25 }}
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Header del modal */}
+              <div className='relative bg-gradient-to-r from-blue-900 to-blue-800 p-6 rounded-t-2xl'>
+                <button
+                  className='absolute top-4 right-4 text-white hover:text-yellow-400 transition-colors'
+                  onClick={() => setProductoSeleccionado(null)}
+                >
+                  <svg
+                    className='w-8 h-8'
+                    fill='none'
+                    stroke='currentColor'
+                    viewBox='0 0 24 24'
+                  >
+                    <path
+                      strokeLinecap='round'
+                      strokeLinejoin='round'
+                      strokeWidth={2}
+                      d='M6 18L18 6M6 6l12 12'
+                    />
+                  </svg>
+                </button>
+                <h2 className='text-2xl md:text-3xl font-bold text-white pr-10'>
+                  {productoSeleccionado.nombre}
+                </h2>
+                {productoSeleccionado.codigo && (
+                  <span className='text-blue-200 text-sm'>
+                    Código: {productoSeleccionado.codigo}
+                  </span>
+                )}
+              </div>
+
+              {/* Contenido del modal */}
+              <div className='p-6 md:p-8'>
+                <div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
+                  {/* Imagen */}
+                  <div className='bg-gray-50 rounded-xl p-6 flex items-center justify-center'>
+                    <OptimizedImage
+                      src={productoSeleccionado.imagen}
+                      alt={productoSeleccionado.nombre}
+                      className='w-full h-64 object-contain'
+                    />
+                  </div>
+
+                  {/* Información */}
+                  <div className='space-y-4'>
+                    <p className='text-gray-600'>
+                      {productoSeleccionado.descripcion}
+                    </p>
+
+                    {/* Especificaciones */}
+                    <div className='bg-gray-50 rounded-xl p-4 space-y-3'>
+                      <h4 className='font-bold text-gray-800 border-b pb-2'>
+                        Especificaciones Técnicas
+                      </h4>
+
+                      {productoSeleccionado.dimensiones && (
+                        <div className='flex justify-between text-sm'>
+                          <span className='text-gray-500'>Dimensiones:</span>
+                          <span className='text-gray-800 font-medium'>
+                            {productoSeleccionado.dimensiones}
+                          </span>
+                        </div>
+                      )}
+                      {productoSeleccionado.peso && (
+                        <div className='flex justify-between text-sm'>
+                          <span className='text-gray-500'>Peso:</span>
+                          <span className='text-gray-800 font-medium'>
+                            {productoSeleccionado.peso}
+                          </span>
+                        </div>
+                      )}
+                      {productoSeleccionado.capacidad && (
+                        <div className='flex justify-between text-sm'>
+                          <span className='text-gray-500'>Capacidad:</span>
+                          <span className='text-gray-800 font-medium'>
+                            {productoSeleccionado.capacidad}
+                          </span>
+                        </div>
+                      )}
+                      {productoSeleccionado.material && (
+                        <div className='flex justify-between text-sm'>
+                          <span className='text-gray-500'>Material:</span>
+                          <span className='text-gray-800 font-medium'>
+                            {productoSeleccionado.material}
+                          </span>
+                        </div>
+                      )}
+                      {productoSeleccionado.resistencia && (
+                        <div className='flex justify-between text-sm'>
+                          <span className='text-gray-500'>Resistencia:</span>
+                          <span className='text-gray-800 font-medium'>
+                            {productoSeleccionado.resistencia}
+                          </span>
+                        </div>
+                      )}
+                      {productoSeleccionado.condiciones && (
+                        <div className='flex justify-between text-sm'>
+                          <span className='text-gray-500'>Condiciones:</span>
+                          <span className='text-gray-800 font-medium'>
+                            {productoSeleccionado.condiciones}
+                          </span>
+                        </div>
+                      )}
+                      {productoSeleccionado.compatibilidad && (
+                        <div className='flex justify-between text-sm'>
+                          <span className='text-gray-500'>Compatible con:</span>
+                          <span className='text-gray-800 font-medium'>
+                            {productoSeleccionado.compatibilidad}
+                          </span>
+                        </div>
+                      )}
+                      {productoSeleccionado.uso && (
+                        <div className='flex justify-between text-sm'>
+                          <span className='text-gray-500'>Uso:</span>
+                          <span className='text-gray-800 font-medium'>
+                            {productoSeleccionado.uso}
+                          </span>
+                        </div>
+                      )}
+                    </div>
+
+                    {/* Tags */}
+                    <div className='flex flex-wrap gap-2'>
+                      {productoSeleccionado.linea && (
+                        <span className='inline-block bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-xs font-semibold'>
+                          {productoSeleccionado.linea}
+                        </span>
+                      )}
+                      {productoSeleccionado.clasificacion && (
+                        <span className='inline-block bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-xs font-semibold'>
+                          {productoSeleccionado.clasificacion}
+                        </span>
+                      )}
+                    </div>
+
+                    {/* Colores */}
+                    {productoSeleccionado.colores && (
+                      <div>
+                        <p className='text-sm text-gray-500 mb-2 font-medium'>
+                          Colores disponibles:
+                        </p>
+                        <div className='flex flex-wrap gap-2'>
+                          {productoSeleccionado.colores.map((color, idx) => (
+                            <span
+                              key={idx}
+                              className='text-sm bg-gray-100 px-3 py-1 rounded-full'
+                            >
+                              {color}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                </div>
+
+                {/* Botón de cotización */}
+                <div className='mt-8 flex flex-col sm:flex-row gap-4'>
+                  <Link
+                    to='/#contacto'
+                    className='flex-1 bg-yellow-400 text-gray-800 py-3 rounded-lg font-bold text-center uppercase hover:bg-yellow-500 transition-all duration-300 shadow-md'
+                  >
+                    Solicitar cotización
+                  </Link>
+                  <button
+                    onClick={() => setProductoSeleccionado(null)}
+                    className='flex-1 bg-gray-200 text-gray-700 py-3 rounded-lg font-bold text-center uppercase hover:bg-gray-300 transition-all duration-300'
+                  >
+                    Cerrar
+                  </button>
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {/* CTA Section */}
       <section className='py-16 px-4 md:px-8 lg:px-16 bg-blue-900'>
