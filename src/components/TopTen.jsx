@@ -72,25 +72,25 @@ const TopTen = () => {
   return (
     <motion.section
       id='topten'
-      className='relative h-screen w-full overflow-hidden bg-blue-900'
+      className='relative min-h-screen w-full overflow-hidden bg-blue-900'
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
       transition={{ duration: 0.8 }}
     >
-      <div className='grid grid-cols-1 lg:grid-cols-2 h-full'>
+      <div className='grid grid-cols-1 lg:grid-cols-2 min-h-screen'>
         {/* Lado izquierdo - Contenido */}
         <motion.div
-          className='relative h-full w-full bg-blue-900 flex items-center justify-center px-8 md:px-12 lg:px-16 py-8'
+          className='relative w-full bg-blue-900 flex items-center justify-center px-6 md:px-10 lg:px-16 py-12 lg:py-8'
           initial={{ x: -100, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, delay: 0.2 }}
         >
-          <div className='space-y-8'>
+          <div className='space-y-6 md:space-y-8 max-w-xl'>
             {/* Título */}
             <motion.h2
-              className='text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight'
+              className='text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-white leading-tight'
               initial={{ y: 30, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
               viewport={{ once: true }}
@@ -112,7 +112,7 @@ const TopTen = () => {
 
             {/* Características con checkmarks */}
             <motion.div
-              className='space-y-6'
+              className='space-y-4 md:space-y-6'
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
@@ -120,7 +120,7 @@ const TopTen = () => {
             >
               {/* Siempre disponibles */}
               <motion.div
-                className='flex items-start gap-4'
+                className='flex items-start gap-3 md:gap-4'
                 initial={{ x: -50, opacity: 0 }}
                 whileInView={{ x: 0, opacity: 1 }}
                 viewport={{ once: true }}
@@ -128,7 +128,7 @@ const TopTen = () => {
               >
                 <div className='shrink-0 mt-1'>
                   <svg
-                    className='w-6 h-6 text-yellow-400'
+                    className='w-5 h-5 md:w-6 md:h-6 text-yellow-400'
                     fill='currentColor'
                     viewBox='0 0 20 20'
                   >
@@ -140,10 +140,10 @@ const TopTen = () => {
                   </svg>
                 </div>
                 <div>
-                  <h3 className='font-bold text-white text-lg'>
+                  <h3 className='font-bold text-white text-base md:text-lg'>
                     Siempre disponibles
                   </h3>
-                  <p className='text-blue-200 text-sm'>
+                  <p className='text-blue-200 text-sm md:text-base'>
                     Siempre tenemos un inventario disponible en nuestros
                     productos top ten.
                   </p>
@@ -152,7 +152,7 @@ const TopTen = () => {
 
               {/* Entrega rápida */}
               <motion.div
-                className='flex items-start gap-4'
+                className='flex items-start gap-3 md:gap-4'
                 initial={{ x: -50, opacity: 0 }}
                 whileInView={{ x: 0, opacity: 1 }}
                 viewport={{ once: true }}
@@ -160,7 +160,7 @@ const TopTen = () => {
               >
                 <div className='shrink-0 mt-1'>
                   <svg
-                    className='w-6 h-6 text-yellow-400'
+                    className='w-5 h-5 md:w-6 md:h-6 text-yellow-400'
                     fill='currentColor'
                     viewBox='0 0 20 20'
                   >
@@ -172,10 +172,10 @@ const TopTen = () => {
                   </svg>
                 </div>
                 <div>
-                  <h3 className='font-bold text-white text-lg'>
+                  <h3 className='font-bold text-white text-base md:text-lg'>
                     Entrega rápida y cobertura nacional
                   </h3>
-                  <p className='text-blue-200 text-sm'>
+                  <p className='text-blue-200 text-sm md:text-base'>
                     Gracias a su alta demanda, podemos poner el producto donde
                     sea, cuando sea.
                   </p>
@@ -184,7 +184,7 @@ const TopTen = () => {
 
               {/* Programas comerciales */}
               <motion.div
-                className='flex items-start gap-4'
+                className='flex items-start gap-3 md:gap-4'
                 initial={{ x: -50, opacity: 0 }}
                 whileInView={{ x: 0, opacity: 1 }}
                 viewport={{ once: true }}
@@ -192,7 +192,7 @@ const TopTen = () => {
               >
                 <div className='shrink-0 mt-1'>
                   <svg
-                    className='w-6 h-6 text-yellow-400'
+                    className='w-5 h-5 md:w-6 md:h-6 text-yellow-400'
                     fill='currentColor'
                     viewBox='0 0 20 20'
                   >
@@ -204,10 +204,10 @@ const TopTen = () => {
                   </svg>
                 </div>
                 <div>
-                  <h3 className='font-bold text-white text-lg'>
+                  <h3 className='font-bold text-white text-base md:text-lg'>
                     Programas comerciales especiales
                   </h3>
-                  <p className='text-blue-200 text-sm'>
+                  <p className='text-blue-200 text-sm md:text-base'>
                     En nuestros productos top ten podemos brindar condiciones
                     especiales en abse a volúmen.
                   </p>
@@ -217,7 +217,7 @@ const TopTen = () => {
 
             {/* Botón */}
             <motion.div
-              className='pt-4'
+              className='pt-2 md:pt-4'
               initial={{ scale: 0.8, opacity: 0 }}
               whileInView={{ scale: 1, opacity: 1 }}
               viewport={{ once: true }}
@@ -225,7 +225,7 @@ const TopTen = () => {
             >
               <Link to='/productos'>
                 <motion.button
-                  className='bg-yellow-400 text-blue-900 px-10 py-3 rounded-full font-bold text-base uppercase hover:bg-yellow-500 transition-all duration-300 shadow-lg'
+                  className='bg-yellow-400 text-blue-900 px-8 md:px-10 py-2.5 md:py-3 rounded-full font-bold text-sm md:text-base uppercase hover:bg-yellow-500 transition-all duration-300 shadow-lg'
                   whileHover={{ scale: 1.1, rotate: [0, -3, 3, 0] }}
                   whileTap={{ scale: 0.95 }}
                 >
@@ -238,14 +238,14 @@ const TopTen = () => {
 
         {/* Lado derecho - Carrusel */}
         <motion.div
-          className='relative h-full w-full bg-blue-800 flex items-center justify-center overflow-hidden'
+          className='relative w-full bg-blue-800 flex items-center justify-center overflow-hidden min-h-[500px] lg:min-h-screen'
           initial={{ x: 100, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, delay: 0.3 }}
         >
           {/* Contenedor del carrusel */}
-          <div className='relative w-full h-full flex items-center justify-center px-16'>
+          <div className='relative w-full h-full flex items-center justify-center px-8 md:px-12 lg:px-16 py-8'>
             {/* Producto actual */}
             <motion.div
               key={currentSlide}
@@ -256,20 +256,23 @@ const TopTen = () => {
               transition={{ duration: 0.6 }}
             >
               {/* Imagen del producto */}
-              <div className='relative mb-8'>
+              <div className='relative mb-6 md:mb-8'>
                 <img
                   src={productos[currentSlide].imagen}
                   alt={productos[currentSlide].nombre}
-                  className='w-full max-w-xl h-auto object-contain rounded-lg shadow-lg'
+                  className='w-full max-w-[280px] md:max-w-md lg:max-w-lg xl:max-w-xl h-auto object-contain rounded-lg shadow-lg'
                 />
               </div>
 
               {/* Información del producto */}
               <div className='text-center space-y-2'>
-                <p className='text-white text-xl font-bold'>
+                <p className='text-white text-lg md:text-xl font-bold'>
+                  {productos[currentSlide].nombre}
+                </p>
+                <p className='text-white text-base md:text-lg font-semibold'>
                   Capacidad: {productos[currentSlide].capacidad}
                 </p>
-                <p className='text-blue-200 text-sm'>
+                <p className='text-blue-200 text-xs md:text-sm'>
                   {productos[currentSlide].colores}
                 </p>
               </div>
@@ -278,13 +281,13 @@ const TopTen = () => {
             {/* Flecha izquierda */}
             <motion.button
               onClick={prevSlide}
-              className='absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-yellow-400 hover:bg-yellow-500 text-blue-900 p-3 rounded-full transition-all duration-300 shadow-lg'
+              className='absolute left-2 md:left-4 top-1/2 -translate-y-1/2 z-20 bg-yellow-400 hover:bg-yellow-500 text-blue-900 p-2 md:p-3 rounded-full transition-all duration-300 shadow-lg'
               aria-label='Anterior'
               whileHover={{ scale: 1.2, x: -5 }}
               whileTap={{ scale: 0.9 }}
             >
               <svg
-                className='w-8 h-8'
+                className='w-6 h-6 md:w-8 md:h-8'
                 fill='none'
                 stroke='currentColor'
                 viewBox='0 0 24 24'
@@ -301,13 +304,13 @@ const TopTen = () => {
             {/* Flecha derecha */}
             <motion.button
               onClick={nextSlide}
-              className='absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-yellow-400 hover:bg-yellow-500 text-blue-900 p-3 rounded-full transition-all duration-300 shadow-lg'
+              className='absolute right-2 md:right-4 top-1/2 -translate-y-1/2 z-20 bg-yellow-400 hover:bg-yellow-500 text-blue-900 p-2 md:p-3 rounded-full transition-all duration-300 shadow-lg'
               aria-label='Siguiente'
               whileHover={{ scale: 1.2, x: 5 }}
               whileTap={{ scale: 0.9 }}
             >
               <svg
-                className='w-8 h-8'
+                className='w-6 h-6 md:w-8 md:h-8'
                 fill='none'
                 stroke='currentColor'
                 viewBox='0 0 24 24'
@@ -322,14 +325,14 @@ const TopTen = () => {
             </motion.button>
 
             {/* Indicadores (dots) */}
-            <div className='absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-3 z-20'>
+            <div className='absolute bottom-4 md:bottom-8 left-1/2 -translate-x-1/2 flex gap-2 md:gap-3 z-20'>
               {productos.map((_, index) => (
                 <motion.button
                   key={index}
                   onClick={() => goToSlide(index)}
-                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                  className={`w-2 h-2 md:w-3 md:h-3 rounded-full transition-all duration-300 ${
                     currentSlide === index
-                      ? "bg-yellow-400 w-8"
+                      ? "bg-yellow-400 w-6 md:w-8"
                       : "bg-blue-400 hover:bg-blue-300"
                   }`}
                   aria-label={`Ir a slide ${index + 1}`}
