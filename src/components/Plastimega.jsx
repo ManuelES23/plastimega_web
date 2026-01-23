@@ -140,7 +140,7 @@ const Plastimega = () => {
                         Costos eficientes
                       </h3>
                       <p className='text-gray-600 text-xs md:text-sm'>
-                        Que nos permiten sen altamente competitivos frente a
+                        Que nos permiten ser altamente competitivos frente a
                         otras opciones.
                       </p>
                     </div>

@@ -31,28 +31,28 @@ const TopTen = () => {
       id: 4,
       nombre: "Caja Puebla 3",
       imagen: "/img/silder/puebla3-05.png",
-      capacidad: "15 kg",
+      capacidad: "20 kg",
       colores: "Azul / Negro / Gris",
     },
     {
       id: 5,
       nombre: "Caja Puebla 5",
       imagen: "/img/silder/puebla5-05.png",
-      capacidad: "18 kg",
+      capacidad: "20 kg",
       colores: "Verde / Negro / Azul",
     },
     {
       id: 6,
       nombre: "Caja Puebla 6",
       imagen: "/img/silder/puebla6-05.png",
-      capacidad: "22 kg",
+      capacidad: "20 kg",
       colores: "Gris / Verde / Negro",
     },
     {
       id: 7,
       nombre: "Caja Villa Nueva",
       imagen: "/img/silder/villanueva-05.png",
-      capacidad: "20 kg",
+      capacidad: "16 kg",
       colores: "Negro / Gris / Verde",
     },
   ];
@@ -209,7 +209,7 @@ const TopTen = () => {
                   </h3>
                   <p className='text-blue-200 text-sm md:text-base'>
                     En nuestros productos top ten podemos brindar condiciones
-                    especiales en abse a volúmen.
+                    especiales en base a volúmen.
                   </p>
                 </div>
               </motion.div>

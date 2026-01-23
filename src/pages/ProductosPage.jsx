@@ -92,7 +92,7 @@ const ProductosPage = () => {
     // Cajas de plástico
     {
       id: 3,
-      nombre: "Caja Cuapiaxtla",
+      nombre: "Caja Xuapiaxtla",
       categoria: "cajas",
       imagen: "/img/productos/CUAPIAXTLA 20KG-04 (1).png",
       descripcion: "Empaque para transportar verduras y vegetales",
@@ -117,7 +117,7 @@ const ProductosPage = () => {
     },
     {
       id: 4,
-      nombre: "Caja Huixcolotla",
+      nombre: "Caja Cuixcolotla",
       categoria: "cajas",
       imagen: "/img/productos/HUIXCOLOTLA 25KG-04.png",
       descripcion: "Empaque para transportar frutas, verduras y vegetales",
@@ -159,12 +159,12 @@ const ProductosPage = () => {
     },
     {
       id: 6,
-      nombre: "Caja Miguel Negrete 5",
+      nombre: "Caja Miguel Negrete 6",
       categoria: "cajas",
       imagen: "/img/productos/MIGUEL NEGRETE 6 comprimida-05.png",
       descripcion: "Empaque para verduras y vegetales",
       colores: ["Gris", "Negro", "Verde"],
-      dimensiones: "50 × 30 × 16 cm",
+      dimensiones: "50 × 30 × 15.5 cm",
       peso: "0.435 kg",
       capacidad: "10 kg",
       material: "Polipropileno Reciclado",
@@ -200,6 +200,7 @@ const ProductosPage = () => {
       descripcion: "Ideal para frutas y verduras",
       capacidad: "20 kg",
       colores: ["Verde", "Amarillo", "Rojo"],
+      dimensiones: "31 × 51 × 27 cm",
       material: "Polipropileno Reciclado",
       linea: "Línea agrícola",
     },
@@ -209,8 +210,9 @@ const ProductosPage = () => {
       categoria: "cajas",
       imagen: "/img/productos/PUEBLA3-04.png",
       descripcion: "Diseño compacto y apilable",
-      capacidad: "15 kg",
+      capacidad: "20 kg",
       colores: ["Azul", "Negro", "Gris"],
+      dimensiones: "40 × 60 × 19.5 cm",
       material: "Polipropileno Reciclado",
       linea: "Línea agrícola",
     },
@@ -220,8 +222,9 @@ const ProductosPage = () => {
       categoria: "cajas",
       imagen: "/img/productos/PUEBLA5-04.png",
       descripcion: "Resistente para uso rudo",
-      capacidad: "18 kg",
+      capacidad: "20 kg",
       colores: ["Verde", "Negro", "Azul"],
+      dimensiones: "31 × 51 × 28 cm",
       material: "Polipropileno Reciclado",
       linea: "Línea agrícola",
     },
@@ -231,8 +234,9 @@ const ProductosPage = () => {
       categoria: "cajas",
       imagen: "/img/productos/PUEBLA6-04.png",
       descripcion: "Perfecta para almacenamiento",
-      capacidad: "22 kg",
+      capacidad: "20 kg",
       colores: ["Gris", "Verde", "Negro"],
+      dimensiones: "31 × 51 × 27 cm",
       material: "Polipropileno Reciclado",
       linea: "Línea agrícola",
     },
@@ -244,6 +248,7 @@ const ProductosPage = () => {
       descripcion: "Gran capacidad para productos agrícolas",
       capacidad: "25 kg",
       colores: ["Azul", "Verde", "Amarillo"],
+      dimensiones: "40 × 60 × 23.5 cm",
       material: "Polietileno de Alta Densidad Reciclado",
       linea: "Línea agrícola",
     },
@@ -253,8 +258,9 @@ const ProductosPage = () => {
       categoria: "cajas",
       imagen: "/img/productos/VILLA NUEVA-05.png",
       descripcion: "Diseño ergonómico para fácil manejo",
-      capacidad: "20 kg",
+      capacidad: "16 kg",
       colores: ["Negro", "Gris", "Verde"],
+      dimensiones: "30 × 50 × 24.5 cm",
       material: "Polipropileno Reciclado",
       linea: "Línea agrícola",
     },
@@ -266,6 +272,7 @@ const ProductosPage = () => {
       categoria: "tapas",
       imagen: "/img/productos/TAPA 10KG Y 16KG-05.png",
       descripcion: "Complemento para Caja Miguel Negrete 5 y Villanueva",
+      dimensiones: "47.5 × 30 cm",
       peso: "0.041 kg",
       material: "Polipropileno Reciclado",
       compatibilidad: "Cajas 10kg - 16kg",
@@ -277,6 +284,7 @@ const ProductosPage = () => {
       categoria: "tapas",
       imagen: "/img/productos/TAPA 20KG-05.png",
       descripcion: "Complemento para Caja Puebla 5",
+      dimensiones: "48.5 × 28.5 cm",
       peso: "0.040 kg",
       material: "Polipropileno Reciclado",
       codigo: "TENE20",
@@ -289,6 +297,7 @@ const ProductosPage = () => {
       categoria: "tapas",
       imagen: "/img/productos/TAPA 23KG-05.png",
       descripcion: "Complemento para Caja Los Reyes",
+      dimensiones: "47.5 × 33.5 cm",
       peso: "0.045 kg",
       material: "Polipropileno Reciclado",
       codigo: "TENE23",
@@ -528,7 +537,7 @@ const ProductosPage = () => {
                     <OptimizedImage
                       src={productoSeleccionado.imagen}
                       alt={productoSeleccionado.nombre}
-                      className='w-full h-64 object-contain'
+                      className='w-full h-96 object-contain'
                     />
                   </div>
 
