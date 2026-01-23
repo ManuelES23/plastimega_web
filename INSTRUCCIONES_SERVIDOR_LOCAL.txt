@@ -1,0 +1,117 @@
+═══════════════════════════════════════════════════════════════════════════
+                    PLASTIMEGA WEB - INSTRUCCIONES DE USO
+                         Sitio Web Compilado (Producción)
+═══════════════════════════════════════════════════════════════════════════
+
+📦 CONTENIDO DEL ZIP
+────────────────────────────────────────────────────────────────────────────
+Este archivo ZIP contiene el sitio web completo y listo para usar.
+No requiere instalación de dependencias ni compilación.
+
+
+🚀 OPCIÓN 1: LIVE SERVER (VS CODE) - Recomendado si usas VS Code
+────────────────────────────────────────────────────────────────────────────
+
+1. Descomprimir el archivo ZIP en cualquier carpeta
+
+2. Abrir la carpeta en Visual Studio Code
+
+3. Instalar la extensión "Live Server" (si no la tienes):
+   - Ir a la pestaña de Extensiones (Ctrl+Shift+X)
+   - Buscar "Live Server" (autor: Ritwick Dey)
+   - Click en "Instalar"
+
+4. Click derecho en el archivo "index.html" → "Open with Live Server"
+
+5. ⚠️ IMPORTANTE: 
+   - El navegador abrirá: http://localhost:5500/index.html
+   - CAMBIAR LA URL A: http://localhost:5500/
+   - (Quitar el "/index.html" del final)
+
+6. ✅ El sitio ya está funcionando!
+
+
+🌐 OPCIÓN 2: HTTP-SERVER (NODE.JS) - Más confiable
+────────────────────────────────────────────────────────────────────────────
+
+Requisito: Tener Node.js instalado (https://nodejs.org)
+
+1. Descomprimir el archivo ZIP
+
+2. Abrir terminal/CMD/PowerShell en la carpeta descomprimida
+
+3. Ejecutar:
+   
+   npx http-server -p 8080
+
+4. Abrir navegador en: http://localhost:8080
+
+5. ✅ Listo! El sitio funciona perfectamente
+
+
+🐍 OPCIÓN 3: PYTHON - Sin instalaciones adicionales
+────────────────────────────────────────────────────────────────────────────
+
+Requisito: Tener Python instalado (viene por defecto en Mac/Linux)
+
+1. Descomprimir el archivo ZIP
+
+2. Abrir terminal/CMD en la carpeta descomprimida
+
+3. Ejecutar uno de estos comandos:
+
+   Python 3:
+   python -m http.server 8080
+
+   Python 2:
+   python -m SimpleHTTPServer 8080
+
+4. Abrir navegador en: http://localhost:8080
+
+
+⚠️ NOTAS IMPORTANTES
+────────────────────────────────────────────────────────────────────────────
+
+• El sitio usa React Router, por lo que SIEMPRE debes empezar desde la 
+  página principal (http://localhost:XXXX/)
+
+• Si visitas directamente /productos en servidor local simple, puede 
+  dar error 404. Esto es normal en desarrollo local.
+
+• Para producción (hosting real), el servidor debe redirigir todas las 
+  rutas a index.html (ver sección de .htaccess arriba)
+
+• Los puertos comunes son: 8080, 5500, 3000, 5000
+  Si uno está ocupado, cambia el número.
+
+
+📞 CARACTERÍSTICAS DEL SITIO
+────────────────────────────────────────────────────────────────────────────
+
+✓ Página principal con secciones: Home, Plastimega, Productos, 
+  Top Ten, Servicios, Testimonios, Blog, Contacto
+
+✓ Catálogo de productos con filtros por categoría
+
+✓ Diseño responsive (funciona en móvil, tablet y desktop)
+
+✓ Optimización de imágenes con lazy loading
+
+✓ Animaciones suaves con Framer Motion
+
+✓ SEO optimizado
+
+
+🎯 RESOLUCIONES ÓPTIMAS
+────────────────────────────────────────────────────────────────────────────
+
+• Desktop: 1920x1080 (Full HD)
+• Laptop: 1366x768
+• Tablet: 768px - 1024px
+• Móvil: 375px - 428px
+
+
+═══════════════════════════════════════════════════════════════════════════
+                        ¿Necesitas ayuda adicional?
+           Contacta al desarrollador o consulta la documentación
+═══════════════════════════════════════════════════════════════════════════
