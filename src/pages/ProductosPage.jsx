@@ -24,7 +24,9 @@ const ProductosPage = () => {
       (producto.capacidad ? `Capacidad: ${producto.capacidad}\n` : "") +
       (producto.material ? `Material: ${producto.material}\n` : "") +
       (producto.dimensiones ? `Dimensiones: ${producto.dimensiones}\n` : "") +
-      (producto.colores ? `Colores disponibles: ${producto.colores.join(", ")}\n` : "") +
+      (producto.colores
+        ? `Colores disponibles: ${producto.colores.join(", ")}\n`
+        : "") +
       `\nPor favor indíquenme precio, disponibilidad y condiciones de entrega.\n\nGracias.`;
     setMensajeContacto(msg);
     setProductoSeleccionado(null);
