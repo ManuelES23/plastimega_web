@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
+import ModalContacto from "./ModalContacto";
 
 const ContactoBanner = () => {
+  const [modalOpen, setModalOpen] = useState(false);
   return (
     <motion.section
       id='contacto-banner'
@@ -56,8 +58,8 @@ const ContactoBanner = () => {
         </motion.h3>
 
         {/* Botón de contacto */}
-        <motion.a
-          href='#contacto'
+        <motion.button
+          onClick={() => setModalOpen(true)}
           className='bg-yellow-400 text-blue-900 px-12 py-4 rounded-full font-bold text-lg md:text-xl uppercase hover:bg-yellow-500 transition-all duration-300 shadow-2xl hover:shadow-3xl transform hover:scale-105'
           initial={{ y: 50, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
@@ -67,7 +69,9 @@ const ContactoBanner = () => {
           whileTap={{ scale: 0.95 }}
         >
           CONTÁCTANOS
-        </motion.a>
+        </motion.button>
+
+        <ModalContacto isOpen={modalOpen} onClose={() => setModalOpen(false)} />
       </div>
     </motion.section>
   );

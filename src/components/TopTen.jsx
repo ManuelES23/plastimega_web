@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const TopTen = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const navigate = useNavigate();
 
   const productos = [
     {
@@ -12,6 +13,7 @@ const TopTen = () => {
       imagen: "/img/silder/MiguelNegrete5-05.png",
       capacidad: "10 kg",
       colores: "Gris / Negro / Verde",
+      categoria: "cajas",
     },
     {
       id: 2,
@@ -19,6 +21,7 @@ const TopTen = () => {
       imagen: "/img/silder/MiguelNegrete6-05.png",
       capacidad: "10 kg",
       colores: "Gris / Negro / Verde",
+      categoria: "cajas",
     },
     {
       id: 3,
@@ -26,6 +29,7 @@ const TopTen = () => {
       imagen: "/img/silder/puebla2-05.png",
       capacidad: "20 kg",
       colores: "Verde / Amarillo / Rojo",
+      categoria: "cajas",
     },
     {
       id: 4,
@@ -33,6 +37,7 @@ const TopTen = () => {
       imagen: "/img/silder/puebla3-05.png",
       capacidad: "20 kg",
       colores: "Azul / Negro / Gris",
+      categoria: "cajas",
     },
     {
       id: 5,
@@ -40,6 +45,7 @@ const TopTen = () => {
       imagen: "/img/silder/puebla5-05.png",
       capacidad: "20 kg",
       colores: "Verde / Negro / Azul",
+      categoria: "cajas",
     },
     {
       id: 6,
@@ -47,6 +53,7 @@ const TopTen = () => {
       imagen: "/img/silder/puebla6-05.png",
       capacidad: "20 kg",
       colores: "Gris / Verde / Negro",
+      categoria: "cajas",
     },
     {
       id: 7,
@@ -54,6 +61,7 @@ const TopTen = () => {
       imagen: "/img/silder/villanueva-05.png",
       capacidad: "16 kg",
       colores: "Negro / Gris / Verde",
+      categoria: "cajas",
     },
   ];
 
@@ -249,11 +257,18 @@ const TopTen = () => {
             {/* Producto actual */}
             <motion.div
               key={currentSlide}
-              className='relative z-10 flex flex-col items-center justify-center'
+              className='relative z-10 flex flex-col items-center justify-center cursor-pointer'
               initial={{ opacity: 0, scale: 0.8, rotateY: 90 }}
               animate={{ opacity: 1, scale: 1, rotateY: 0 }}
               exit={{ opacity: 0, scale: 0.8, rotateY: -90 }}
               transition={{ duration: 0.6 }}
+              onClick={() =>
+                navigate(
+                  `/productos?categoria=${productos[currentSlide].categoria}`,
+                )
+              }
+              whileHover={{ scale: 1.03 }}
+              title='Ver categoría en catálogo'
             >
               {/* Imagen del producto */}
               <div className='relative mb-6 md:mb-8'>
@@ -274,6 +289,9 @@ const TopTen = () => {
                 </p>
                 <p className='text-blue-200 text-xs md:text-sm'>
                   {productos[currentSlide].colores}
+                </p>
+                <p className='text-yellow-400 text-xs md:text-sm font-semibold mt-1 opacity-80'>
+                  Ver en catálogo →
                 </p>
               </div>
             </motion.div>

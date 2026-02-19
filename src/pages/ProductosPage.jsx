@@ -1,14 +1,40 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import OptimizedImage from "../components/OptimizedImage";
 import SEO from "../components/SEO";
+import ModalContacto from "../components/ModalContacto";
 
 const ProductosPage = () => {
-  const [categoriaActiva, setCategoriaActiva] = useState("todas");
+  const [searchParams] = useSearchParams();
+  const [categoriaActiva, setCategoriaActiva] = useState(
+    searchParams.get("categoria") || "todas",
+  );
   const [productoSeleccionado, setProductoSeleccionado] = useState(null);
+  const [modalContactoOpen, setModalContactoOpen] = useState(false);
+  const [mensajeContacto, setMensajeContacto] = useState("");
+
+  const abrirCotizacion = (producto) => {
+    const msg =
+      `Hola, me gustaría solicitar una cotización del siguiente producto:\n\n` +
+      `Producto: ${producto.nombre}\n` +
+      `Categoría: ${producto.categoria}\n` +
+      (producto.capacidad ? `Capacidad: ${producto.capacidad}\n` : "") +
+      (producto.material ? `Material: ${producto.material}\n` : "") +
+      (producto.dimensiones ? `Dimensiones: ${producto.dimensiones}\n` : "") +
+      (producto.colores ? `Colores disponibles: ${producto.colores.join(", ")}\n` : "") +
+      `\nPor favor indíquenme precio, disponibilidad y condiciones de entrega.\n\nGracias.`;
+    setMensajeContacto(msg);
+    setProductoSeleccionado(null);
+    setModalContactoOpen(true);
+  };
+
+  useEffect(() => {
+    const cat = searchParams.get("categoria");
+    if (cat) setCategoriaActiva(cat);
+  }, [searchParams]);
 
   const productosSchema = {
     "@context": "https://schema.org",
@@ -92,7 +118,7 @@ const ProductosPage = () => {
     // Cajas de plástico
     {
       id: 3,
-      nombre: "Caja Xuapiaxtla",
+      nombre: "Caja Cuapiaxtla",
       categoria: "cajas",
       imagen: "/img/productos/CUAPIAXTLA 20KG-04 (1).png",
       descripcion: "Empaque para transportar verduras y vegetales",
@@ -117,7 +143,7 @@ const ProductosPage = () => {
     },
     {
       id: 4,
-      nombre: "Caja Cuixcolotla",
+      nombre: "Caja Huixcolotla",
       categoria: "cajas",
       imagen: "/img/productos/HUIXCOLOTLA 25KG-04.png",
       descripcion: "Empaque para transportar frutas, verduras y vegetales",
@@ -656,12 +682,12 @@ const ProductosPage = () => {
 
                 {/* Botón de cotización */}
                 <div className='mt-8 flex flex-col sm:flex-row gap-4'>
-                  <Link
-                    to='/#contacto'
+                  <button
+                    onClick={() => abrirCotizacion(productoSeleccionado)}
                     className='flex-1 bg-yellow-400 text-gray-800 py-3 rounded-lg font-bold text-center uppercase hover:bg-yellow-500 transition-all duration-300 shadow-md'
                   >
                     Solicitar cotización
-                  </Link>
+                  </button>
                   <button
                     onClick={() => setProductoSeleccionado(null)}
                     className='flex-1 bg-gray-200 text-gray-700 py-3 rounded-lg font-bold text-center uppercase hover:bg-gray-300 transition-all duration-300'
@@ -703,17 +729,26 @@ const ProductosPage = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            <Link
-              to='/#contacto'
+            <button
+              onClick={() => {
+                setMensajeContacto("");
+                setModalContactoOpen(true);
+              }}
               className='inline-block bg-yellow-400 text-blue-900 px-8 py-4 rounded-full font-bold text-lg uppercase hover:bg-yellow-500 transition-all duration-300 shadow-lg'
             >
               Contáctanos
-            </Link>
+            </button>
           </motion.div>
         </div>
       </section>
 
       <Footer />
+
+      <ModalContacto
+        isOpen={modalContactoOpen}
+        onClose={() => setModalContactoOpen(false)}
+        mensajeInicial={mensajeContacto}
+      />
     </div>
   );
 };

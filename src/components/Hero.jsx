@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+import ModalContacto from "./ModalContacto";
 
 const Hero = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [modalOpen, setModalOpen] = useState(false);
 
   return (
     <div
@@ -45,12 +48,12 @@ const Hero = () => {
                 >
                   PLASTIMEGA
                 </a>
-                <a
-                  href='#produtos'
+                <Link
+                  to='/productos'
                   className='text-white hover:text-blue-300 px-3 py-2 text-md font-medium transition-colors duration-300 uppercase'
                 >
                   PRODUCTOS
-                </a>
+                </Link>
                 <a
                   href='#topten'
                   className='text-white hover:text-blue-300 px-3 py-2 text-md font-medium transition-colors duration-300 uppercase'
@@ -148,13 +151,13 @@ const Hero = () => {
             >
               PLASTIMEGA
             </a>
-            <a
-              href='#produtos'
+            <Link
+              to='/productos'
               className='text-white hover:text-blue-300 hover:bg-white hover:bg-opacity-10 block px-3 py-2 rounded-md text-base font-medium transition-colors duration-300 uppercase'
               onClick={() => setIsMenuOpen(false)}
             >
-              PRODUTOS
-            </a>
+              PRODUCTOS
+            </Link>
             <a
               href='#topten'
               className='text-white hover:text-blue-300 hover:bg-white hover:bg-opacity-10 block px-3 py-2 rounded-md text-base font-medium transition-colors duration-300 uppercase'
@@ -217,8 +220,8 @@ const Hero = () => {
           />
 
           {/* Contact Button */}
-          <motion.a
-            href='#contacto'
+          <motion.button
+            onClick={() => setModalOpen(true)}
             className='hero-button bg-blue-900 text-yellow-400 px-8 py-2.5 rounded-full font-bold text-lg uppercase hover:bg-blue-800 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105'
             style={{
               marginTop: "min(-15.6vw, -200px)",
@@ -231,7 +234,7 @@ const Hero = () => {
             whileTap={{ scale: 0.95 }}
           >
             Contáctanos
-          </motion.a>
+          </motion.button>
         </div>
 
         {/* Right Side - Person Image with Badge */}
@@ -499,6 +502,8 @@ const Hero = () => {
           }
         }
       `}</style>
+
+      <ModalContacto isOpen={modalOpen} onClose={() => setModalOpen(false)} />
     </div>
   );
 };

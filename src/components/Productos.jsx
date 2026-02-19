@@ -76,49 +76,35 @@ const Productos = () => {
 
             {/* Tarjeta 2: Sillas de plástico */}
             <motion.div
-              className='group bg-white rounded-lg shadow-lg overflow-hidden flex flex-col items-center justify-center py-16 px-8 relative hover:shadow-xl transition-all duration-300 min-h-150s hover:bg-blue-900'
+              className='bg-white rounded-lg shadow-lg overflow-hidden flex flex-col items-center justify-center py-16 px-8 hover:shadow-xl transition-shadow duration-300 min-h-150'
               initial={{ opacity: 0, y: 50, rotateX: -15 }}
               whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.6 }}
               whileHover={{ y: -10, scale: 1.05 }}
             >
-              {/* Imagen de fondo solo visible en hover */}
-              <div
-                className='absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300'
-                style={{
-                  backgroundImage: 'url("/img/imagenes/imagen silla-03.png")',
-                  backgroundSize: "cover",
-                  backgroundPosition: "center",
-                }}
-              ></div>
-              {/* Overlay azul solo visible en hover */}
-              <div className='absolute inset-0 bg-blue-900 opacity-0 group-hover:opacity-70 transition-opacity duration-300'></div>
-
-              <div className='relative z-10 flex flex-col items-center'>
-                <div className='mb-8'>
-                  <img
-                    src='/img/iconos/icono silla  7-03.png'
-                    alt='Icono silla de plástico'
-                    className='w-20 h-20 md:w-24 md:h-24'
-                  />
-                </div>
-                <h3 className='text-2xl font-bold text-gray-800 group-hover:text-white mb-6 transition-colors duration-300'>
-                  Sillas de plástico
-                </h3>
-                <p className='text-gray-600 group-hover:text-white text-center mb-8 text-sm transition-colors duration-300'>
-                  Sillas de plástico resistentes, y duraderas.
-                </p>
-                <Link to='/productos'>
-                  <motion.button
-                    className='bg-yellow-400 text-gray-800 px-8 py-2 rounded-full font-bold text-sm uppercase hover:bg-yellow-500 transition-all duration-300 shadow-md'
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    ver más
-                  </motion.button>
-                </Link>
+              <div className='mb-8'>
+                <img
+                  src='/img/iconos/icono silla  7-03.png'
+                  alt='Icono silla de plástico'
+                  className='w-20 h-20 md:w-24 md:h-24'
+                />
               </div>
+              <h3 className='text-2xl font-bold text-gray-800 mb-6'>
+                Sillas de plástico
+              </h3>
+              <p className='text-gray-600 text-center mb-8 text-sm'>
+                Sillas de plástico resistentes, y duraderas.
+              </p>
+              <Link to='/productos'>
+                <motion.button
+                  className='bg-yellow-400 text-gray-800 px-8 py-2 rounded-full font-bold text-sm uppercase hover:bg-yellow-500 transition-all duration-300 shadow-md'
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  ver más
+                </motion.button>
+              </Link>
             </motion.div>
 
             {/* Tarjeta 3: Tapa de plástico */}
@@ -128,7 +114,7 @@ const Productos = () => {
               whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.7 }}
-              whileHover={{ y: -10, scale: 1.05, rotate: [0, -2, 2, 0] }}
+              whileHover={{ y: -10, scale: 1.05 }}
             >
               <div className='mb-8'>
                 <img
