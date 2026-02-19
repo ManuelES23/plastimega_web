@@ -72,9 +72,43 @@
     <meta name="geo.region" content="MX" />
     <meta name="geo.placename" content="México" />
 
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-E6ZYEXXLC4"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-E6ZYEXXLC4");
+    </script>
+
     <!-- Preconnect para rendimiento -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Preload imágenes críticas above-the-fold -->
+    <link
+      rel="preload"
+      as="image"
+      href="/img/imagenes/imagen-hero.webp"
+      type="image/webp"
+    />
+    <link
+      rel="preload"
+      as="image"
+      href="/img/textos-graficos/texto-hero.webp"
+      type="image/webp"
+    />
+    <link
+      rel="preload"
+      as="image"
+      href="/img/iconos/Logo plastimega-03.webp"
+      type="image/webp"
+    />
 
     <!-- Schema.org JSON-LD -->
     <script type="application/ld+json">

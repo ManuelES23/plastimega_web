@@ -1,6 +1,12 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 
+// Convierte la ruta de imagen a su versión WebP equivalente
+const toWebP = (src) => {
+  if (!src) return src;
+  return src.replace(/\.(png|jpe?g)$/i, ".webp");
+};
+
 const OptimizedImage = ({
   src,
   alt,
@@ -14,6 +20,9 @@ const OptimizedImage = ({
   const [isLoaded, setIsLoaded] = useState(false);
   const [hasError, setHasError] = useState(false);
 
+  const webpSrc = toWebP(src);
+  const fetchPriority = priority ? "high" : "auto";
+
   return (
     <div className='relative' style={style}>
       {/* Skeleton/Placeholder mientras carga */}
@@ -24,23 +33,32 @@ const OptimizedImage = ({
         />
       )}
 
-      {/* Imagen con fade-in al cargar */}
-      <motion.img
-        src={src}
-        alt={alt}
-        className={className}
-        style={style}
-        loading={priority ? "eager" : loading}
-        onLoad={() => setIsLoaded(true)}
-        onError={() => {
-          setHasError(true);
-          setIsLoaded(true);
-        }}
+      {/* Picture con WebP y fallback PNG */}
+      <motion.picture
         initial={{ opacity: 0 }}
         animate={{ opacity: isLoaded ? 1 : 0 }}
         transition={{ duration: 0.3 }}
-        {...props}
-      />
+      >
+        {/* Fuente WebP para navegadores compatibles */}
+        <source srcSet={webpSrc} type='image/webp' />
+
+        {/* Fallback al original si no soporta WebP */}
+        <img
+          src={src}
+          alt={alt}
+          className={className}
+          style={style}
+          loading={priority ? "eager" : loading}
+          decoding='async'
+          fetchpriority={fetchPriority}
+          onLoad={() => setIsLoaded(true)}
+          onError={() => {
+            setHasError(true);
+            setIsLoaded(true);
+          }}
+          {...props}
+        />
+      </motion.picture>
 
       {/* Fallback si hay error */}
       {hasError && (

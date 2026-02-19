@@ -13,7 +13,7 @@ const ContactoBanner = () => {
       viewport={{ once: true }}
       transition={{ duration: 1, ease: "easeOut" }}
       style={{
-        backgroundImage: 'url("/img/imagenes/imagen 10-03.png")',
+        backgroundImage: 'url("/img/imagenes/imagen 10-03.webp")',
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",

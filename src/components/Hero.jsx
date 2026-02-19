@@ -11,7 +11,7 @@ const Hero = () => {
     <div
       className='relative h-screen flex flex-col overflow-hidden'
       style={{
-        backgroundImage: "url(/img/imagenes/imagen-hero.png)",
+        backgroundImage: "url(/img/imagenes/imagen-hero.webp)",
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",

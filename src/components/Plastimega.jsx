@@ -240,7 +240,7 @@ const Plastimega = () => {
                 <div
                   className='relative w-full h-full min-h-150 rounded-2xl overflow-hidden'
                   style={{
-                    backgroundImage: 'url("/img/imagenes/imagen 2-03.png")',
+                    backgroundImage: 'url("/img/imagenes/imagen 2-03.webp")',
                     backgroundSize: "cover",
                     backgroundPosition: "center calc(100% + 55px)",
                     backgroundRepeat: "no-repeat",
