@@ -105,7 +105,9 @@ const Footer = () => {
           {/* FILA 2 - Columna 3: Redes Sociales */}
           <div className='flex space-x-4'>
             <a
-              href='#'
+              href='https://www.facebook.com/plastimega.oficial'
+              target='_blank'
+              rel='noopener noreferrer'
               className='w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center hover:bg-yellow-400 hover:text-blue-900 transition-colors'
               aria-label='Facebook'
             >
@@ -114,7 +116,9 @@ const Footer = () => {
               </svg>
             </a>
             <a
-              href='#'
+              href='https://www.instagram.com/plastimega.cuapiaxtla.oficial/'
+              target='_blank'
+              rel='noopener noreferrer'
               className='w-12 h-12 rounded-full flex items-center justify-center hover:opacity-80 transition-opacity'
               style={{
                 background:
@@ -127,7 +131,9 @@ const Footer = () => {
               </svg>
             </a>
             <a
-              href='#'
+              href='https://www.tiktok.com/@plastimegaoficial'
+              target='_blank'
+              rel='noopener noreferrer'
               className='w-12 h-12 bg-black rounded-full flex items-center justify-center hover:bg-gray-800 transition-colors'
               aria-label='TikTok'
             >
