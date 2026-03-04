@@ -107,8 +107,7 @@ const articuloSchema = {
   datePublished: "2026-02-25",
   mainEntityOfPage: {
     "@type": "WebPage",
-    "@id":
-      "https://plastimega.mx/blog/cajas-plastico-cadena-valor-agro",
+    "@id": "https://plastimega.mx/blog/cajas-plastico-cadena-valor-agro",
   },
 };
 
@@ -117,54 +116,51 @@ const articuloSchema = {
 ───────────────────────────────────────────────────────── */
 const BlogArticuloPage = () => {
   return (
-    <div className="min-h-screen bg-white">
+    <div className='min-h-screen bg-white'>
       <SEO
-        title="Importancia de las cajas de plástico en la cadena de valor agro | Plastimega"
-        description="El sector agroalimentario mexicano superó los $51,874 millones de dólares en exportaciones en 2023. Conoce el rol estratégico de las cajas de plástico en protección, inocuidad y eficiencia logística."
-        keywords="cajas de plástico agro, cadena de valor agroalimentaria, logística frutas verduras, embalaje agrícola México, inocuidad alimentaria, Plastimega"
-        canonicalUrl="https://plastimega.mx/blog/cajas-plastico-cadena-valor-agro"
+        title='Importancia de las cajas de plástico en la cadena de valor agro | Plastimega'
+        description='El sector agroalimentario mexicano superó los $51,874 millones de dólares en exportaciones en 2023. Conoce el rol estratégico de las cajas de plástico en protección, inocuidad y eficiencia logística.'
+        keywords='cajas de plástico agro, cadena de valor agroalimentaria, logística frutas verduras, embalaje agrícola México, inocuidad alimentaria, Plastimega'
+        canonicalUrl='https://plastimega.mx/blog/cajas-plastico-cadena-valor-agro'
         ogImage={ARTICULO.imagen}
-        ogType="article"
+        ogType='article'
         schemaData={articuloSchema}
       />
 
       {/* ── Hero con imagen de fondo + Navbar integrado ── */}
-      <div className="relative h-[55vh] min-h-95 overflow-hidden">
+      <div className='relative h-[55vh] min-h-95 overflow-hidden'>
         <img
           src={ARTICULO.imagen}
           alt={ARTICULO.titulo}
-          className="w-full h-full object-cover"
-          loading="eager"
+          className='w-full h-full object-cover'
+          loading='eager'
         />
-        <div className="absolute inset-0 bg-linear-to-b from-[#1B2E6B]/60 via-[#1B2E6B]/50 to-[#1B2E6B]/90" />
+        <div className='absolute inset-0 bg-linear-to-b from-[#1B2E6B]/60 via-[#1B2E6B]/50 to-[#1B2E6B]/90' />
 
         {/* Navbar integrado sobre la imagen */}
-        <div className="absolute top-0 left-0 w-full z-10">
+        <div className='absolute top-0 left-0 w-full z-10'>
           <Navbar />
         </div>
 
-        <div className="absolute inset-0 flex flex-col justify-end pb-10 px-4">
-          <div className="max-w-4xl mx-auto w-full">
+        <div className='absolute inset-0 flex flex-col justify-end pb-10 px-4'>
+          <div className='max-w-4xl mx-auto w-full'>
             {/* Breadcrumb */}
-            <nav className="flex items-center gap-2 text-white/70 text-sm mb-4">
-              <Link to="/" className="hover:text-white transition-colors">
+            <nav className='flex items-center gap-2 text-white/70 text-sm mb-4'>
+              <Link to='/' className='hover:text-white transition-colors'>
                 Inicio
               </Link>
               <span>/</span>
-              <Link
-                to="/#blog"
-                className="hover:text-white transition-colors"
-              >
+              <Link to='/#blog' className='hover:text-white transition-colors'>
                 Blog
               </Link>
               <span>/</span>
-              <span className="text-white/90 line-clamp-1">
+              <span className='text-white/90 line-clamp-1'>
                 Cajas de plástico en la cadena de valor agro
               </span>
             </nav>
 
             <motion.h1
-              className="text-white text-3xl md:text-4xl lg:text-5xl font-bold leading-tight"
+              className='text-white text-3xl md:text-4xl lg:text-5xl font-bold leading-tight'
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, ease: "easeOut" }}
@@ -173,7 +169,7 @@ const BlogArticuloPage = () => {
             </motion.h1>
 
             <motion.p
-              className="text-white/70 text-sm mt-3"
+              className='text-white/70 text-sm mt-3'
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.3, duration: 0.6 }}
@@ -185,25 +181,25 @@ const BlogArticuloPage = () => {
       </div>
 
       {/* ── Contenido del artículo ── */}
-      <main className="max-w-4xl mx-auto px-4 md:px-8 py-14 md:py-20">
+      <main className='max-w-4xl mx-auto px-4 md:px-8 py-14 md:py-20'>
         {ARTICULO.secciones.map((seccion, i) => (
           <motion.div
             key={i}
-            className="mb-8"
+            className='mb-8'
             initial={{ opacity: 0, y: 18 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.55, delay: i * 0.05 }}
           >
             {seccion.subtitulo && (
-              <h2 className="text-[#1B2E6B] text-xl md:text-2xl font-bold mb-3 mt-2 leading-snug border-l-4 border-yellow-400 pl-4">
+              <h2 className='text-[#1B2E6B] text-xl md:text-2xl font-bold mb-3 mt-2 leading-snug border-l-4 border-yellow-400 pl-4'>
                 {seccion.subtitulo}
               </h2>
             )}
             {seccion.parrafos.map((parrafo, j) => (
               <p
                 key={j}
-                className="text-gray-700 text-base md:text-lg leading-relaxed mb-3"
+                className='text-gray-700 text-base md:text-lg leading-relaxed mb-3'
               >
                 {parrafo}
               </p>
@@ -213,31 +209,31 @@ const BlogArticuloPage = () => {
 
         {/* ── CTA ── */}
         <motion.div
-          className="mt-14 rounded-2xl bg-[#1B2E6B] p-8 md:p-10 text-center"
+          className='mt-14 rounded-2xl bg-[#1B2E6B] p-8 md:p-10 text-center'
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h3 className="text-white text-2xl md:text-3xl font-bold mb-3">
+          <h3 className='text-white text-2xl md:text-3xl font-bold mb-3'>
             ¿Buscas cajas de plástico para tu operación agro?
           </h3>
-          <p className="text-white/80 text-base mb-7 max-w-xl mx-auto">
+          <p className='text-white/80 text-base mb-7 max-w-xl mx-auto'>
             En Plastimega contamos con el catálogo más amplio de cajas y
             embalaje plástico con entrega rápida en todo México.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className='flex flex-col sm:flex-row gap-4 justify-center'>
             <Link
-              to="/productos"
-              className="bg-yellow-400 hover:bg-yellow-300 text-[#1B2E6B] font-bold
-                         px-8 py-3 rounded-full transition-colors text-sm"
+              to='/productos'
+              className='bg-yellow-400 hover:bg-yellow-300 text-[#1B2E6B] font-bold
+                         px-8 py-3 rounded-full transition-colors text-sm'
             >
               Ver catálogo de productos
             </Link>
             <Link
-              to="/#contacto"
-              className="border-2 border-white text-white hover:bg-white hover:text-[#1B2E6B]
-                         font-semibold px-8 py-3 rounded-full transition-colors text-sm"
+              to='/#contacto'
+              className='border-2 border-white text-white hover:bg-white hover:text-[#1B2E6B]
+                         font-semibold px-8 py-3 rounded-full transition-colors text-sm'
             >
               Cotizar ahora
             </Link>
@@ -245,22 +241,22 @@ const BlogArticuloPage = () => {
         </motion.div>
 
         {/* ── Volver al blog ── */}
-        <div className="mt-10 text-center">
+        <div className='mt-10 text-center'>
           <Link
-            to="/#blog"
-            className="inline-flex items-center gap-2 text-[#1B2E6B] font-semibold
-                       hover:underline text-sm"
+            to='/#blog'
+            className='inline-flex items-center gap-2 text-[#1B2E6B] font-semibold
+                       hover:underline text-sm'
           >
             <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2.2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="w-4 h-4"
+              viewBox='0 0 24 24'
+              fill='none'
+              stroke='currentColor'
+              strokeWidth='2.2'
+              strokeLinecap='round'
+              strokeLinejoin='round'
+              className='w-4 h-4'
             >
-              <polyline points="15 18 9 12 15 6" />
+              <polyline points='15 18 9 12 15 6' />
             </svg>
             Volver al blog
           </Link>

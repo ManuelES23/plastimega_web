@@ -22,7 +22,10 @@ function App() {
       <Routes>
         <Route path='/' element={<HomePage />} />
         <Route path='/productos' element={<ProductosPage />} />
-        <Route path='/blog/cajas-plastico-cadena-valor-agro' element={<BlogArticuloPage />} />
+        <Route
+          path='/blog/cajas-plastico-cadena-valor-agro'
+          element={<BlogArticuloPage />}
+        />
       </Routes>
     </>
   );
