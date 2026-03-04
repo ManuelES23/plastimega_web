@@ -1,5 +1,6 @@
 import React, { useState, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 import useEmblaCarousel from "embla-carousel-react";
 import OptimizedImage from "./OptimizedImage";
 
@@ -42,7 +43,8 @@ const ARTICULOS_DEFAULT = [
       "El sector agroalimentario mexicano superó los $51,874 millones de dólares en exportaciones en 2023. Descubre el rol estratégico de las cajas de plástico en esta cadena de valor.",
     imagen:
       "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=600&q=80",
-    link: "#contacto",
+    link: "/blog/cajas-plastico-cadena-valor-agro",
+    slug: "cajas-plastico-cadena-valor-agro",
     contenidoCompleto: {
       titulo: "Importancia de las cajas de plástico en la cadena de valor agro",
       secciones: [
@@ -151,17 +153,26 @@ const ChevronRight = () => (
    Tarjeta individual con efecto overlap en imagen
 ------------------------------------------------- */
 const ArticuloCard = ({ articulo, onLeer }) => {
-  const tieneModal = Boolean(articulo.contenidoCompleto);
+  const tieneAccion = Boolean(articulo.slug || articulo.contenidoCompleto);
   const esExternal = articulo.imagen.startsWith("http");
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    if (articulo.slug) {
+      navigate(`/blog/${articulo.slug}`);
+    } else if (articulo.contenidoCompleto) {
+      onLeer(articulo);
+    }
+  };
 
   return (
     <div className='h-full pt-5 pb-1'>
       <div
-        onClick={() => tieneModal && onLeer(articulo)}
+        onClick={tieneAccion ? handleClick : undefined}
         className={[
           "relative flex flex-col h-full rounded-2xl overflow-visible shadow-lg",
           "transition-shadow duration-300",
-          tieneModal ? "cursor-pointer hover:shadow-2xl" : "hover:shadow-xl",
+          tieneAccion ? "cursor-pointer hover:shadow-2xl" : "hover:shadow-xl",
         ].join(" ")}
       >
         {/* Imagen: sobresale 20px sobre el borde superior de la tarjeta */}
@@ -190,14 +201,14 @@ const ArticuloCard = ({ articulo, onLeer }) => {
           <p className='text-white/90 text-sm leading-relaxed flex-1'>
             {articulo.descripcion}
           </p>
-          {tieneModal && (
+          {tieneAccion && (
             <motion.span
               whileHover={{ x: 4 }}
               className='inline-block mt-5 self-start text-[#F5A623] text-sm
                          font-semibold border border-[#F5A623]/60 rounded-full
                          px-4 py-1.5 select-none'
             >
-              Leer artículo completo →
+              {articulo.slug ? "Ver artículo →" : "Leer artículo completo →"}
             </motion.span>
           )}
         </div>

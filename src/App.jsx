@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import ProductosPage from "./pages/ProductosPage";
+import BlogArticuloPage from "./pages/BlogArticuloPage";
 
 // Componente para hacer scroll al inicio en cada cambio de ruta
 function ScrollToTop() {
@@ -21,6 +22,7 @@ function App() {
       <Routes>
         <Route path='/' element={<HomePage />} />
         <Route path='/productos' element={<ProductosPage />} />
+        <Route path='/blog/cajas-plastico-cadena-valor-agro' element={<BlogArticuloPage />} />
       </Routes>
     </>
   );
