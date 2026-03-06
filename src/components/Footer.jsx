@@ -93,12 +93,12 @@ const Footer = () => {
           {/* FILA 2 - Columna 2: Website */}
           <div>
             <a
-              href='http://plastimega.com.mx/'
+              href='http://plastimega.mx/'
               target='_blank'
               rel='noopener noreferrer'
               className='text-sm hover:text-yellow-400 transition-colors'
             >
-              http://plastimega.com.mx/
+              http://plastimega.mx/
             </a>
           </div>
 
