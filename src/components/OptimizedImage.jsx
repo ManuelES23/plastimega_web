@@ -21,6 +21,8 @@ const OptimizedImage = ({
   const [hasError, setHasError] = useState(false);
 
   const webpSrc = toWebP(src);
+  // Solo usar source WebP si la imagen es local y tiene una versión webp diferente
+  const hasWebpVersion = webpSrc !== src && !src.startsWith("http");
   const fetchPriority = priority ? "high" : "auto";
 
   return (
@@ -39,10 +41,10 @@ const OptimizedImage = ({
         animate={{ opacity: isLoaded ? 1 : 0 }}
         transition={{ duration: 0.3 }}
       >
-        {/* Fuente WebP para navegadores compatibles */}
-        <source srcSet={webpSrc} type='image/webp' />
+        {/* Fuente WebP solo si existe versión convertida local */}
+        {hasWebpVersion && <source srcSet={webpSrc} type='image/webp' />}
 
-        {/* Fallback al original si no soporta WebP */}
+        {/* Fallback al original */}
         <img
           src={src}
           alt={alt}
@@ -50,7 +52,7 @@ const OptimizedImage = ({
           style={style}
           loading={priority ? "eager" : loading}
           decoding='async'
-          fetchpriority={fetchPriority}
+          fetchPriority={fetchPriority}
           onLoad={() => setIsLoaded(true)}
           onError={() => {
             setHasError(true);

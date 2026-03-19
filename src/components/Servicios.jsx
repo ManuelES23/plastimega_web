@@ -103,7 +103,7 @@ const Servicios = () => {
       </div>
 
       {/* Estilos responsivos para móvil */}
-      <style jsx>{`
+      <style>{`
         /* Mobile - Portrait (≤480px) */
         @media (max-width: 480px) {
           .servicios-section {

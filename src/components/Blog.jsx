@@ -10,30 +10,14 @@ import OptimizedImage from "./OptimizedImage";
 ------------------------------------------------- */
 const ARTICULOS_DEFAULT = [
   {
-    id: 1,
-    titulo: "SOLUCIONES PARA SUMINISTRO AGRO.",
+    id: 5,
+    titulo: "PERSPECTIVAS DE LA PRODUCCIÓN AGRÍCOLA PARA EL VERANO EN MÉXICO",
     descripcion:
-      "La industria agroalimentaria es una de las más dinámicas, por ello, te brindamos un servicio integral para que tu operación no se detenga.",
-    imagen: "/img/imagenes/imagen 1-05.webp",
-    link: null,
-    contenidoCompleto: null,
-  },
-  {
-    id: 2,
-    titulo: "PLASTIMEGA LANZA NUEVA PÁGINA WEB.",
-    descripcion:
-      "La industria agroalimentaria es una de las más dinámicas, por ello, te brindamos un servicio integral para que tu operación no se detenga.",
-    imagen: "/img/imagenes/imagen 2-05.webp",
-    link: null,
-    contenidoCompleto: null,
-  },
-  {
-    id: 3,
-    titulo: "NUEVOS PRODUCTOS POR ANUNCIARSE.",
-    descripcion:
-      "La industria agroalimentaria es una de las más dinámicas, por ello, te brindamos un servicio integral para que tu operación no se detenga.",
-    imagen: "/img/imagenes/imagen 3-05.webp",
-    link: null,
+      "Análisis del volumen productivo, exportaciones y condiciones de mercado para el verano agrícola en México frente al desempeño del año anterior.",
+    imagen: "/img/blog/df31165b-29e2-4dcc-b8cb-819842045e9b.jpg",
+    link: "/blog/perspectivas-produccion-agricola-verano-mexico",
+    slug: "perspectivas-produccion-agricola-verano-mexico",
+    fecha: "Marzo 2026",
     contenidoCompleto: null,
   },
   {
@@ -98,6 +82,33 @@ const ARTICULOS_DEFAULT = [
         },
       ],
     },
+  },
+  {
+    id: 1,
+    titulo: "SOLUCIONES PARA SUMINISTRO AGRO.",
+    descripcion:
+      "La industria agroalimentaria es una de las más dinámicas, por ello, te brindamos un servicio integral para que tu operación no se detenga.",
+    imagen: "/img/imagenes/imagen 1-05.webp",
+    link: null,
+    contenidoCompleto: null,
+  },
+  {
+    id: 2,
+    titulo: "PLASTIMEGA LANZA NUEVA PÁGINA WEB.",
+    descripcion:
+      "La industria agroalimentaria es una de las más dinámicas, por ello, te brindamos un servicio integral para que tu operación no se detenga.",
+    imagen: "/img/imagenes/imagen 2-05.webp",
+    link: null,
+    contenidoCompleto: null,
+  },
+  {
+    id: 3,
+    titulo: "NUEVOS PRODUCTOS POR ANUNCIARSE.",
+    descripcion:
+      "La industria agroalimentaria es una de las más dinámicas, por ello, te brindamos un servicio integral para que tu operación no se detenga.",
+    imagen: "/img/imagenes/imagen 3-05.webp",
+    link: null,
+    contenidoCompleto: null,
   },
 ];
 

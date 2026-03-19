@@ -284,7 +284,7 @@ const Hero = () => {
       </div>
 
       {/* Estilos específicos para 1366x768 */}
-      <style jsx>{`
+      <style>{`
         @media (min-width: 1360px) and (max-width: 1370px) and (min-height: 760px) and (max-height: 775px) {
           .hero-text-image {
             width: 700px !important;
@@ -319,7 +319,7 @@ const Hero = () => {
       `}</style>
 
       {/* Estilos para Mobile y Tablet */}
-      <style jsx>{`
+      <style>{`
         /* Mobile - Portrait (320px - 480px) */
         @media (max-width: 480px) {
           /* Logo más pequeño en móvil */

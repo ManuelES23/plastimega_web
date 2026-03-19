@@ -3,6 +3,7 @@ import { Routes, Route, useLocation } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import ProductosPage from "./pages/ProductosPage";
 import BlogArticuloPage from "./pages/BlogArticuloPage";
+import BlogArticuloPerspectivas from "./pages/BlogArticuloPerspectivas";
 
 // Componente para hacer scroll al inicio en cada cambio de ruta
 function ScrollToTop() {
@@ -25,6 +26,10 @@ function App() {
         <Route
           path='/blog/cajas-plastico-cadena-valor-agro'
           element={<BlogArticuloPage />}
+        />
+        <Route
+          path='/blog/perspectivas-produccion-agricola-verano-mexico'
+          element={<BlogArticuloPerspectivas />}
         />
       </Routes>
     </>
