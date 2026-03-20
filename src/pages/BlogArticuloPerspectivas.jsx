@@ -137,7 +137,7 @@ const BlogArticuloPerspectivas = () => {
       />
 
       {/* ── Hero con imagen de fondo + Navbar integrado ── */}
-      <div className='relative h-[55vh] min-h-95 overflow-hidden'>
+      <div className='relative min-h-[520px] md:h-[55vh] md:min-h-[400px] overflow-hidden'>
         <img
           src={ARTICULO.imagen}
           alt={ARTICULO.titulo}
@@ -169,7 +169,7 @@ const BlogArticuloPerspectivas = () => {
             </nav>
 
             <motion.h1
-              className='text-white text-3xl md:text-4xl lg:text-5xl font-bold leading-tight'
+              className='text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight'
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, ease: "easeOut" }}

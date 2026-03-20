@@ -1,14 +1,28 @@
 @import "tailwindcss";
 
+/* Embla carousel slides */
+.embla-slide {
+  flex: 0 0 85%;
+}
+@media (min-width: 768px) {
+  .embla-slide {
+    flex: 0 0 50%;
+  }
+}
+@media (min-width: 1024px) {
+  .embla-slide {
+    flex: 0 0 33.333%;
+  }
+}
+
 /* Smooth scroll para toda la página */
 html {
   scroll-behavior: smooth;
-  overflow-x: hidden;
 }
 
 body {
-  overflow-x: hidden;
   max-width: 100vw;
+  overflow-x: clip;
 }
 
 /* Custom animations */

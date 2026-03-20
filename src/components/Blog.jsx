@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from "react";
+import React, { useState, useCallback, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import useEmblaCarousel from "embla-carousel-react";
@@ -163,12 +163,13 @@ const ChevronRight = () => (
 /* -------------------------------------------------
    Tarjeta individual con efecto overlap en imagen
 ------------------------------------------------- */
-const ArticuloCard = ({ articulo, onLeer }) => {
+const ArticuloCard = ({ articulo, onLeer, isDragging }) => {
   const tieneAccion = Boolean(articulo.slug || articulo.contenidoCompleto);
   const esExternal = articulo.imagen.startsWith("http");
   const navigate = useNavigate();
 
   const handleClick = () => {
+    if (isDragging.current) return;
     if (articulo.slug) {
       navigate(`/blog/${articulo.slug}`);
     } else if (articulo.contenidoCompleto) {
@@ -329,6 +330,8 @@ const Blog = ({ articulos = ARTICULOS_DEFAULT }) => {
   const [emblaRef, emblaApi] = useEmblaCarousel({
     align: "start",
     loop: false,
+    containScroll: "trimSnaps",
+    dragFree: false,
   });
 
   const [canPrev, setCanPrev] = useState(false);
@@ -336,6 +339,7 @@ const Blog = ({ articulos = ARTICULOS_DEFAULT }) => {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [scrollSnaps, setScrollSnaps] = useState([]);
   const [modalArticulo, setModalArticulo] = useState(null);
+  const isDragging = useRef(false);
 
   const onSelect = useCallback(() => {
     if (!emblaApi) return;
@@ -356,6 +360,11 @@ const Blog = ({ articulos = ARTICULOS_DEFAULT }) => {
     emblaApi.on("init", onInit);
     emblaApi.on("select", onSelect);
     emblaApi.on("reInit", onInit);
+    emblaApi.on("pointerDown", () => { isDragging.current = false; });
+    emblaApi.on("scroll", () => { isDragging.current = true; });
+    emblaApi.on("pointerUp", () => {
+      setTimeout(() => { isDragging.current = false; }, 200);
+    });
     return () => {
       emblaApi.off("init", onInit);
       emblaApi.off("select", onSelect);
@@ -377,7 +386,7 @@ const Blog = ({ articulos = ARTICULOS_DEFAULT }) => {
     <>
       <motion.section
         id='blog'
-        className='relative w-full overflow-hidden bg-[#F5F5F7] py-16 md:py-20'
+        className='relative w-full bg-[#F5F5F7] py-16 md:py-20'
         initial={{ opacity: 0, scale: 0.97 }}
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true }}
@@ -403,14 +412,14 @@ const Blog = ({ articulos = ARTICULOS_DEFAULT }) => {
           </motion.div>
 
           {/* Carrusel Embla */}
-          <div className='overflow-hidden' ref={emblaRef}>
+          <div className='overflow-hidden' ref={emblaRef} style={{ touchAction: 'pan-y pinch-zoom' }}>
             <div className='flex'>
               {articulos.map((art) => (
                 <div
                   key={art.id}
-                  className='shrink-0 w-full md:w-1/2 lg:w-1/3 px-3'
+                  className='embla-slide min-w-0 px-3'
                 >
-                  <ArticuloCard articulo={art} onLeer={abrirModal} />
+                  <ArticuloCard articulo={art} onLeer={abrirModal} isDragging={isDragging} />
                 </div>
               ))}
             </div>
