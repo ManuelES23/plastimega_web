@@ -102,7 +102,9 @@ const Footer = () => {
                 </a>
               </li>
               <li className='flex items-center gap-2'>
-                <span className='text-yellow-400 font-medium w-14'>Beatriz</span>
+                <span className='text-yellow-400 font-medium w-14'>
+                  Beatriz
+                </span>
                 <a
                   href='tel:+522227209284'
                   className='hover:text-yellow-400 transition-colors text-gray-200'
@@ -111,7 +113,9 @@ const Footer = () => {
                 </a>
               </li>
               <li className='flex items-center gap-2'>
-                <span className='text-yellow-400 font-medium w-14'>Roberto</span>
+                <span className='text-yellow-400 font-medium w-14'>
+                  Roberto
+                </span>
                 <a
                   href='tel:+522223227393'
                   className='hover:text-yellow-400 transition-colors text-gray-200'
