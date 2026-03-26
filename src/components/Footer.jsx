@@ -53,14 +53,6 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href='mailto:mperez@plastimega.com.mx'
-                  className='hover:text-yellow-400 transition-colors'
-                >
-                  mperez@plastimega.com.mx -------- Ext. 108
-                </a>
-              </li>
-              <li>
-                <a
                   href='mailto:ventaspuebla@plastimega.com.mx'
                   className='hover:text-yellow-400 transition-colors'
                 >
