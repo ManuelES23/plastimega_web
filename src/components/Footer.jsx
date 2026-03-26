@@ -73,7 +73,7 @@ const Footer = () => {
           {/* FILA 2 - Columna 1: Teléfonos */}
           <div>
             <h3 className='font-semibold mb-2'>Teléfonos:</h3>
-            <p className='text-sm'>
+            <p className='text-sm mb-3'>
               <a
                 href='tel:+5212494260904'
                 className='hover:text-yellow-400 transition-colors'
@@ -88,6 +88,38 @@ const Footer = () => {
                 (+52 1)249 426 07 47
               </a>
             </p>
+            <h4 className='text-xs font-semibold text-blue-300 uppercase tracking-wider mb-2'>
+              Vendedores
+            </h4>
+            <ul className='space-y-1 text-sm'>
+              <li className='flex items-center gap-2'>
+                <span className='text-yellow-400 font-medium w-14'>Magaly</span>
+                <a
+                  href='tel:+522223109604'
+                  className='hover:text-yellow-400 transition-colors text-gray-200'
+                >
+                  222 310 9604
+                </a>
+              </li>
+              <li className='flex items-center gap-2'>
+                <span className='text-yellow-400 font-medium w-14'>Beatriz</span>
+                <a
+                  href='tel:+522227209284'
+                  className='hover:text-yellow-400 transition-colors text-gray-200'
+                >
+                  222 720 9284
+                </a>
+              </li>
+              <li className='flex items-center gap-2'>
+                <span className='text-yellow-400 font-medium w-14'>Roberto</span>
+                <a
+                  href='tel:+522223227393'
+                  className='hover:text-yellow-400 transition-colors text-gray-200'
+                >
+                  222 322 7393
+                </a>
+              </li>
+            </ul>
           </div>
 
           {/* FILA 2 - Columna 2: Website */}
