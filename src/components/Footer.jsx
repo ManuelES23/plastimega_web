@@ -45,10 +45,10 @@ const Footer = () => {
             <ul className='space-y-2 text-sm'>
               <li>
                 <a
-                  href='mailto:rmoral@plastimega.com.mx'
+                  href='mailto:mperez@plastimega.com.mx'
                   className='hover:text-yellow-400 transition-colors'
                 >
-                  rmoral@plastimega.com.mx -------- Ext. 107
+                  mperez@plastimega.com.mx -------- Ext. 108
                 </a>
               </li>
               <li>
