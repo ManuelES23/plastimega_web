@@ -4,6 +4,7 @@ import HomePage from "./pages/HomePage";
 import ProductosPage from "./pages/ProductosPage";
 import BlogArticuloPage from "./pages/BlogArticuloPage";
 import BlogArticuloPerspectivas from "./pages/BlogArticuloPerspectivas";
+import ProveedoresPage from "./pages/ProveedoresPage";
 
 // Componente para hacer scroll al inicio en cada cambio de ruta
 function ScrollToTop() {
@@ -31,6 +32,7 @@ function App() {
           path='/blog/perspectivas-produccion-agricola-verano-mexico'
           element={<BlogArticuloPerspectivas />}
         />
+        <Route path='/proveedores' element={<ProveedoresPage />} />
       </Routes>
     </>
   );
