@@ -276,10 +276,15 @@ const ProveedoresSection = ({
                     <h4 className='font-bold text-gray-800 mb-1'>
                       Sucursal Puebla
                     </h4>
-                    <p className='text-gray-600 text-sm leading-relaxed'>
+                    <a
+                      href='https://www.google.com/maps/search/?api=1&query=Calle+Esmeralda+S%2FN+Miguel+Negrete%2C+Cuapiaxtla+de+Madero%2C+Puebla'
+                      target='_blank'
+                      rel='noopener noreferrer'
+                      className='text-gray-600 text-sm leading-relaxed hover:text-blue-900 transition-colors'
+                    >
                       Calle Esmeralda S/N Miguel Negrete, Cuapiaxtla de Madero,
                       Puebla.
-                    </p>
+                    </a>
                   </div>
                 </motion.div>
 
@@ -298,9 +303,14 @@ const ProveedoresSection = ({
                     <h4 className='font-bold text-gray-800 mb-1'>
                       Sucursal Veracruz
                     </h4>
-                    <p className='text-gray-600 text-sm leading-relaxed'>
+                    <a
+                      href='https://www.google.com/maps/search/?api=1&query=Blvd.+Gustavo+Alfonso+Torres+%23280%2C+Ciudad+Isla%2C+Veracruz'
+                      target='_blank'
+                      rel='noopener noreferrer'
+                      className='text-gray-600 text-sm leading-relaxed hover:text-blue-900 transition-colors'
+                    >
                       Blvd. Gustavo Alfonso Torres #280, Ciudad Isla, Veracruz.
-                    </p>
+                    </a>
                   </div>
                 </motion.div>
 
