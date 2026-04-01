@@ -4,7 +4,7 @@ import { MapPin, Mail, Phone } from "lucide-react";
 import OptimizedImage from "./OptimizedImage";
 
 const ProveedoresSection = ({
-  productosImage = "/img/imagenes/imagen-hero.webp",
+  productosImage = "/img/imagenes/proveedores-handshake.webp",
 }) => {
   const [formData, setFormData] = useState({
     nombre: "",
