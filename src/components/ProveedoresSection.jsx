@@ -3,7 +3,9 @@ import { motion } from "framer-motion";
 import { MapPin, Mail, Phone } from "lucide-react";
 import OptimizedImage from "./OptimizedImage";
 
-const ProveedoresSection = ({ productosImage = "/img/imagenes/imagen-hero.webp" }) => {
+const ProveedoresSection = ({
+  productosImage = "/img/imagenes/imagen-hero.webp",
+}) => {
   const [formData, setFormData] = useState({
     nombre: "",
     correo: "",
@@ -23,14 +25,14 @@ const ProveedoresSection = ({ productosImage = "/img/imagenes/imagen-hero.webp" 
     e.preventDefault();
     const destinatario = "plastimegacompras@outlook.com.mx";
     const asunto = encodeURIComponent(
-      formData.asunto || "Contacto de proveedor - Plastimega"
+      formData.asunto || "Contacto de proveedor - Plastimega",
     );
     const cuerpo = encodeURIComponent(
       `Nombre: ${formData.nombre}\n` +
-      `Correo: ${formData.correo}\n` +
-      `Teléfono: ${formData.telefono || "No proporcionado"}\n` +
-      `Asunto: ${formData.asunto || "Sin asunto"}\n\n` +
-      `Mensaje:\n${formData.mensaje}`
+        `Correo: ${formData.correo}\n` +
+        `Teléfono: ${formData.telefono || "No proporcionado"}\n` +
+        `Asunto: ${formData.asunto || "Sin asunto"}\n\n` +
+        `Mensaje:\n${formData.mensaje}`,
     );
     window.location.href = `mailto:${destinatario}?subject=${asunto}&body=${cuerpo}`;
   };
@@ -49,8 +51,7 @@ const ProveedoresSection = ({ productosImage = "/img/imagenes/imagen-hero.webp" 
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
             >
-              ¿Quieres ser{" "}
-              <span className='text-blue-900'>proveedor</span>?
+              ¿Quieres ser <span className='text-blue-900'>proveedor</span>?
             </motion.h2>
 
             <div className='grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center'>
