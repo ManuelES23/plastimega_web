@@ -2,7 +2,7 @@
 
 ## 🏗️ Arquitectura del Proyecto
 
-Este es un **sitio web multi-página** para Plastimega, distribuidor de productos plásticos, construido con React + Vite + Tailwind CSS v4 + Framer Motion + React Router.
+Este es un **sitio web multi-página** para Plastimega, distribuidor de productos plásticos, construido con React + Vite + Tailwind CSS v4 + Framer Motion + React Router. **Hospedado en Netlify**.
 
 ### Estructura de Componentes
 
@@ -10,7 +10,9 @@ Este es un **sitio web multi-página** para Plastimega, distribuidor de producto
 - **Páginas** en `src/pages/`:
   - `HomePage.jsx` - Página principal con secciones ancladas (`#home`, `#plastimega`, `#produtos`, `#topten`, `#servicios`, `#testimonios`, `#blog`, `#contacto`)
   - `ProductosPage.jsx` - Catálogo completo de productos con filtros por categoría
-- **Componentes principales** en `src/components/`: Hero, Navbar, Plastimega, Productos, TopTen, Servicios, Testimonios, Blog, ContactoBanner, Footer
+  - `BlogArticuloPage.jsx` - Artículo de blog: Cajas plástico cadena valor agro
+  - `BlogArticuloPerspectivas.jsx` - Artículo de blog: Perspectivas producción agrícola
+- **Componentes principales** en `src/components/`: Hero, Navbar, Plastimega, Productos, TopTen, Servicios, Testimonios, Blog, ContactoBanner, ContactoForm, ModalContacto, Footer, SEO
 - **Componentes utilitarios**: `OptimizedImage.jsx` para carga optimizada de imágenes con lazy loading y skeleton loaders
 - **Hook personalizado**: `useScrollAnimation.js` para animaciones de scroll con Intersection Observer
 
@@ -22,6 +24,7 @@ Este es un **sitio web multi-página** para Plastimega, distribuidor de producto
 - **Tailwind CSS 4.1** (usando `@tailwindcss/vite`)
 - **Framer Motion 12.23** para animaciones avanzadas
 - **ESLint 9** con configuración flat config
+- **Netlify** como plataforma de hosting y CDN
 
 ## 🎨 Patrones de Animación (Framer Motion)
 
@@ -91,6 +94,8 @@ Ver [OPTIMIZACION_IMAGENES.md](OPTIMIZACION_IMAGENES.md) para tamaños y formato
 - **Rutas disponibles**:
   - `/` - Página principal (HomePage)
   - `/productos` - Catálogo de productos (ProductosPage)
+  - `/blog/cajas-plastico-cadena-valor-agro` - Artículo blog agro
+  - `/blog/perspectivas-produccion-agricola-verano-mexico` - Artículo blog perspectivas
 - **Navegación programática**: Usar `<Link>` de react-router-dom, NO usar `<a href>`
 
 ### Patrón de Navegación
@@ -150,6 +155,43 @@ npm run lint     # Ejecutar ESLint
 - **NO** usar `<img>` directamente - siempre usar `OptimizedImage`
 - **NO** olvidar el atributo `viewport={{ once: true }}` en animaciones de Framer Motion (para evitar re-animaciones)
 - **NO** asumir TypeScript - este proyecto usa JavaScript puro (.jsx)
+- **NO** usar `<a href>` para navegación interna - usar `<Link to>` de react-router-dom
+
+## 🌐 Hosting en Netlify
+
+### Configuración de Despliegue
+
+- **Plataforma**: Netlify (CDN global)
+- **Build command**: `npm run build`
+- **Publish directory**: `dist`
+- **Archivo de configuración**: `netlify.toml` en la raíz del proyecto
+
+### Archivos de Netlify
+
+- **`netlify.toml`**: Configuración principal (build, headers de seguridad, caché, redirects)
+- **`public/_redirects`**: Regla SPA para React Router (fallback a `index.html`)
+- **`public/_headers`**: Headers HTTP personalizados para seguridad y caché
+
+### Headers de Seguridad Configurados
+
+- `X-Frame-Options: DENY` - Prevenir clickjacking
+- `X-Content-Type-Options: nosniff` - Prevenir MIME sniffing
+- `X-XSS-Protection: 1; mode=block` - Protección XSS
+- `Referrer-Policy: strict-origin-when-cross-origin`
+- `Permissions-Policy` - Restricción de APIs del navegador
+- `Content-Security-Policy` - Política de seguridad de contenido
+
+### Caché Optimizado
+
+- Assets estáticos (`/assets/*`): Cache inmutable (1 año) - Vite genera hashes en nombres
+- Imágenes (`/img/*`): Cache de 30 días con revalidación
+- HTML: Sin caché (siempre fresco)
+
+### Reglas Importantes
+
+- **NO** modificar `_redirects` sin entender las implicaciones en React Router
+- **NO** olvidar actualizar `sitemap.xml` al agregar nuevas rutas
+- Al agregar una nueva página, verificar que el `netlify.toml` no bloquee la ruta
 
 ## 📁 Archivos de Documentación
 

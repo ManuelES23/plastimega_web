@@ -24,5 +24,9 @@ export default defineConfig({
     sourcemap: false,
     // Chunk size warning a 600KB
     chunkSizeWarningLimit: 600,
+    // Optimizar CSS
+    cssMinify: "esbuild",
+    // Limpiar dist antes de cada build
+    emptyOutDir: true,
   },
 });

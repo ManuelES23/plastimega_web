@@ -22,7 +22,6 @@
       type="image/png"
       href="/img/iconos/Logo plastimega-03.png"
     />
-    <link rel="apple-touch-icon" href="/img/iconos/Logo plastimega-03.png" />
     <link rel="apple-touch-icon" href="/img/iconos/favicon.png" />
 
     <!-- Open Graph / Facebook -->
@@ -89,6 +88,8 @@
     <!-- Preconnect para rendimiento -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+    <link rel="dns-prefetch" href="https://www.google-analytics.com" />
 
     <!-- Preload imágenes críticas above-the-fold -->
     <link
@@ -110,13 +111,13 @@
       type="image/webp"
     />
 
-    <!-- Schema.org JSON-LD -->
+    <!-- Schema.org JSON-LD: Organization -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "Organization",
         "name": "Plastimega",
-        "description": "Distribuidor líder de productos plásticos en México",
+        "description": "Distribuidor líder de productos plásticos en México: cajas, sillas, tapas, embalaje y desechables para soluciones industriales.",
         "url": "https://plastimega.com",
         "logo": "https://plastimega.com/img/iconos/logo-plastimega.png",
         "contactPoint": {
@@ -134,6 +135,18 @@
           "@type": "PostalAddress",
           "addressCountry": "MX"
         }
+      }
+    </script>
+
+    <!-- Schema.org JSON-LD: WebSite (para Google Sitelinks Search Box) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Plastimega",
+        "url": "https://plastimega.com",
+        "description": "Distribuidor de productos plásticos en México",
+        "inLanguage": "es-MX"
       }
     </script>
   </head>

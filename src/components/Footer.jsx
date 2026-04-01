@@ -43,6 +43,7 @@ const Footer = () => {
           <div>
             <h3 className='font-semibold mb-4'>Email:</h3>
             <ul className='space-y-2 text-sm'>
+              7
               <li>
                 <a
                   href='mailto:mperez@plastimega.com.mx'
