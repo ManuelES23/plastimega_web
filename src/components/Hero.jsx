@@ -78,18 +78,18 @@ const Hero = () => {
                 >
                   BLOG
                 </a>
-                <a
-                  href='#contacto'
-                  className='text-white hover:text-blue-300 px-3 py-2 text-md font-medium transition-colors duration-300 uppercase'
-                >
-                  CONTACTO
-                </a>
                 <Link
                   to='/proveedores'
                   className='text-white hover:text-blue-300 px-3 py-2 text-md font-medium transition-colors duration-300 uppercase'
                 >
                   PROVEEDORES
                 </Link>
+                <a
+                  href='#contacto'
+                  className='text-white hover:text-blue-300 px-3 py-2 text-md font-medium transition-colors duration-300 uppercase'
+                >
+                  CONTACTO
+                </a>
               </div>
             </div>
 
