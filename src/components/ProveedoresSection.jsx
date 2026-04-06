@@ -118,6 +118,120 @@ const ProveedoresSection = ({
         </div>
       </section>
 
+      {/* ─── BLOQUE 3: MATERIA PRIMA MÁS DEMANDADA ─── */}
+      <section className='relative w-full overflow-hidden bg-white'>
+        <div className='px-4 md:px-8 lg:px-16 xl:px-24 py-16'>
+          <div className='max-w-7xl mx-auto w-full'>
+            <motion.h2
+              className='text-2xl md:text-3xl lg:text-4xl font-bold text-gray-800 text-center mb-4 leading-tight'
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+            >
+              Materia prima que más{" "}
+              <span className='text-blue-900'>demandamos</span>
+            </motion.h2>
+
+            <motion.p
+              className='text-gray-500 text-center mb-12 text-sm md:text-base'
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              Si cuentas con estos materiales, ¡nos interesa conocerte!
+            </motion.p>
+
+            <div className='grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto'>
+              {/* Card 1 - Polipropileno Reciclado */}
+              <motion.div
+                className='bg-gray-50 border-2 border-blue-900 rounded-2xl p-8 flex flex-col items-center text-center shadow-md hover:shadow-xl transition-shadow duration-300'
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
+                whileHover={{ scale: 1.03 }}
+              >
+                <div className='w-16 h-16 bg-blue-900 rounded-full flex items-center justify-center mb-5'>
+                  <svg
+                    className='w-8 h-8 text-yellow-400'
+                    fill='none'
+                    stroke='currentColor'
+                    strokeWidth='2'
+                    viewBox='0 0 24 24'
+                  >
+                    <path
+                      strokeLinecap='round'
+                      strokeLinejoin='round'
+                      d='M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15'
+                    />
+                  </svg>
+                </div>
+                <h3 className='text-xl font-bold text-blue-900 mb-2'>
+                  Polipropileno Reciclado
+                </h3>
+                <p className='text-gray-500 text-sm leading-relaxed'>
+                  PP reciclado para reincorporarlo a nuestra cadena de
+                  producción.
+                </p>
+              </motion.div>
+
+              {/* Card 2 - Polietileno de Alta Densidad Reciclado */}
+              <motion.div
+                className='bg-gray-50 border-2 border-blue-900 rounded-2xl p-8 flex flex-col items-center text-center shadow-md hover:shadow-xl transition-shadow duration-300'
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.7, ease: "easeOut", delay: 0.4 }}
+                whileHover={{ scale: 1.03 }}
+              >
+                <div className='w-16 h-16 bg-blue-900 rounded-full flex items-center justify-center mb-5'>
+                  <svg
+                    className='w-8 h-8 text-yellow-400'
+                    fill='none'
+                    stroke='currentColor'
+                    strokeWidth='2'
+                    viewBox='0 0 24 24'
+                  >
+                    <path
+                      strokeLinecap='round'
+                      strokeLinejoin='round'
+                      d='M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4'
+                    />
+                  </svg>
+                </div>
+                <h3 className='text-xl font-bold text-blue-900 mb-2'>
+                  Polietileno de Alta Densidad Reciclado
+                </h3>
+                <p className='text-gray-500 text-sm leading-relaxed'>
+                  HDPE reciclado para su reúso en nuestros procesos de
+                  manufactura.
+                </p>
+              </motion.div>
+            </div>
+
+            {/* CTA */}
+            <motion.div
+              className='text-center mt-12'
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+            >
+              <motion.a
+                href='#contacto-proveedores'
+                className='inline-block bg-blue-900 text-yellow-400 px-12 py-4 rounded-full font-bold text-lg uppercase hover:bg-blue-800 transition-all duration-300 shadow-lg hover:shadow-xl'
+                whileHover={{ scale: 1.08 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                Quiero ser proveedor
+              </motion.a>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* ─── BLOQUE 2: FORMULARIO + DATOS DE CONTACTO ─── */}
       <section
         id='contacto-proveedores'
@@ -338,10 +452,10 @@ const ProveedoresSection = ({
                     </p>
                     <p className='text-gray-600 text-sm leading-relaxed'>
                       <a
-                        href='mailto:kgonzales@plastimega.com.mx'
+                        href='mailto:kgonzalez@plastimega.com.mx'
                         className='hover:text-blue-900 transition-colors'
                       >
-                        kgonzales@plastimega.com.mx
+                        kgonzalez@plastimega.com.mx
                       </a>{" "}
                       Ext.114
                     </p>

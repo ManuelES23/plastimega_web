@@ -19,9 +19,16 @@ const Footer = () => {
             <p className='text-sm leading-relaxed'>
               PLÁSTICOS MEXICANOS GAITÁN S.A. DE C.V.
               <br />
-              Calle Esmeralda S/N Miguel Negrete, Cuapiaxtla
-              <br />
-              de Madero, Puebla.
+              <a
+                href='https://www.google.com/maps/search/?api=1&query=Calle+Esmeralda+S%2FN+Miguel+Negrete%2C+Cuapiaxtla+de+Madero%2C+Puebla'
+                target='_blank'
+                rel='noopener noreferrer'
+                className='hover:text-yellow-400 transition-colors'
+              >
+                Calle Esmeralda S/N Miguel Negrete, Cuapiaxtla
+                <br />
+                de Madero, Puebla.
+              </a>
             </p>
           </div>
 
@@ -33,9 +40,16 @@ const Footer = () => {
             <p className='text-sm leading-relaxed'>
               PLÁSTICOS MEXICANOS GAITÁN S.A. DE C.V.
               <br />
-              Boulevard Mtro. Gustavo Alfonso Torres # 280,
-              <br />
-              En Ciudad, Isla. Veracruz.
+              <a
+                href='https://www.google.com/maps/search/?api=1&query=Boulevard+Gustavo+Alfonso+Torres+280%2C+Ciudad+Isla%2C+Veracruz'
+                target='_blank'
+                rel='noopener noreferrer'
+                className='hover:text-yellow-400 transition-colors'
+              >
+                Boulevard Mtro. Gustavo Alfonso Torres # 280,
+                <br />
+                En Ciudad, Isla. Veracruz.
+              </a>
             </p>
           </div>
 
