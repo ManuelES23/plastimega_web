@@ -41,14 +41,15 @@ const Footer = () => {
               PLÁSTICOS MEXICANOS GAITÁN S.A. DE C.V.
               <br />
               <a
-                href='https://www.google.com/maps/search/?api=1&query=Boulevard+Gustavo+Alfonso+Torres+280%2C+Ciudad+Isla%2C+Veracruz'
+                href='https://www.google.com/maps/search/?api=1&query=Ernesto+Zedillo+Ponce+de+Le%C3%B3n+151%2C+Col.+Federico+Gamboa+Iglecias%2C+95648+Fernando+L%C3%B3pez+Arias%2C+Ver.'
                 target='_blank'
                 rel='noopener noreferrer'
                 className='hover:text-yellow-400 transition-colors'
               >
-                Boulevard Mtro. Gustavo Alfonso Torres # 280,
+                Ernesto Zedillo Ponce de León 151, Col. Federico Gamboa
+                Iglecias,
                 <br />
-                En Ciudad, Isla. Veracruz.
+                95648 Fernando López Arias, Ver.
               </a>
             </p>
           </div>

@@ -418,12 +418,13 @@ const ProveedoresSection = ({
                       Sucursal Veracruz
                     </h4>
                     <a
-                      href='https://www.google.com/maps/search/?api=1&query=Blvd.+Gustavo+Alfonso+Torres+%23280%2C+Ciudad+Isla%2C+Veracruz'
+                      href='https://www.google.com/maps/search/?api=1&query=Ernesto+Zedillo+Ponce+de+Le%C3%B3n+151%2C+Col.+Federico+Gamboa+Iglecias%2C+95648+Fernando+L%C3%B3pez+Arias%2C+Ver.'
                       target='_blank'
                       rel='noopener noreferrer'
                       className='text-gray-600 text-sm leading-relaxed hover:text-blue-900 transition-colors'
                     >
-                      Blvd. Gustavo Alfonso Torres #280, Ciudad Isla, Veracruz.
+                      Ernesto Zedillo Ponce de León 151, Col. Federico Gamboa
+                      Iglecias, 95648 Fernando López Arias, Ver.
                     </a>
                   </div>
                 </motion.div>
