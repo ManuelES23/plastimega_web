@@ -373,10 +373,16 @@ const Blog = ({ articulos = ARTICULOS_DEFAULT }) => {
     emblaApi.on("init", onInit);
     emblaApi.on("select", onSelect);
     emblaApi.on("reInit", onInit);
-    emblaApi.on("pointerDown", () => { isDragging.current = false; });
-    emblaApi.on("scroll", () => { isDragging.current = true; });
+    emblaApi.on("pointerDown", () => {
+      isDragging.current = false;
+    });
+    emblaApi.on("scroll", () => {
+      isDragging.current = true;
+    });
     emblaApi.on("pointerUp", () => {
-      setTimeout(() => { isDragging.current = false; }, 200);
+      setTimeout(() => {
+        isDragging.current = false;
+      }, 200);
     });
     return () => {
       emblaApi.off("init", onInit);
@@ -425,14 +431,19 @@ const Blog = ({ articulos = ARTICULOS_DEFAULT }) => {
           </motion.div>
 
           {/* Carrusel Embla */}
-          <div className='overflow-hidden' ref={emblaRef} style={{ touchAction: 'pan-y pinch-zoom' }}>
+          <div
+            className='overflow-hidden'
+            ref={emblaRef}
+            style={{ touchAction: "pan-y pinch-zoom" }}
+          >
             <div className='flex'>
               {articulos.map((art) => (
-                <div
-                  key={art.id}
-                  className='embla-slide min-w-0 px-3'
-                >
-                  <ArticuloCard articulo={art} onLeer={abrirModal} isDragging={isDragging} />
+                <div key={art.id} className='embla-slide min-w-0 px-3'>
+                  <ArticuloCard
+                    articulo={art}
+                    onLeer={abrirModal}
+                    isDragging={isDragging}
+                  />
                 </div>
               ))}
             </div>
