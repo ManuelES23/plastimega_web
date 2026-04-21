@@ -4,6 +4,7 @@ import HomePage from "./pages/HomePage";
 import ProductosPage from "./pages/ProductosPage";
 import BlogArticuloPage from "./pages/BlogArticuloPage";
 import BlogArticuloPerspectivas from "./pages/BlogArticuloPerspectivas";
+import BlogArticuloRetos from "./pages/BlogArticuloRetos";
 import ProveedoresPage from "./pages/ProveedoresPage";
 
 // Componente para hacer scroll al inicio en cada cambio de ruta
@@ -31,6 +32,10 @@ function App() {
         <Route
           path='/blog/perspectivas-produccion-agricola-verano-mexico'
           element={<BlogArticuloPerspectivas />}
+        />
+        <Route
+          path='/blog/retos-mercado-temporada-agricola-primavera-verano-2026'
+          element={<BlogArticuloRetos />}
         />
         <Route path='/proveedores' element={<ProveedoresPage />} />
       </Routes>

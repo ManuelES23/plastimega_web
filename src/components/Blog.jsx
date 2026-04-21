@@ -10,6 +10,19 @@ import OptimizedImage from "./OptimizedImage";
 ------------------------------------------------- */
 const ARTICULOS_DEFAULT = [
   {
+    id: 6,
+    titulo:
+      "RETOS DE MERCADO PARA LA TEMPORADA AGRÍCOLA DE HORTALIZAS PRIMAVERA-VERANO 2026",
+    descripcion:
+      "Análisis de los factores críticos del ciclo P-V 2026: volumen de producción, demanda del consumidor consciente y los retos de exportación bajo T-MEC y normativas FSMA.",
+    imagen:
+      "https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=600&q=80",
+    link: "/blog/retos-mercado-temporada-agricola-primavera-verano-2026",
+    slug: "retos-mercado-temporada-agricola-primavera-verano-2026",
+    fecha: "Abril 2026",
+    contenidoCompleto: null,
+  },
+  {
     id: 5,
     titulo: "PERSPECTIVAS DE LA PRODUCCIÓN AGRÍCOLA PARA EL VERANO EN MÉXICO",
     descripcion:
